@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
 # READ
   def index
-
+    @users = User.all
   end
 
   def show
@@ -63,10 +63,13 @@ class UsersController < ApplicationController
 
   def logout
     session.delete(:user_id)
+    redirect_to root_path
   end
 
   def home
-    # byebug
+    if !@user
+      redirect_to root_path
+    end
   end
 
   private
