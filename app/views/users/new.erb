@@ -1,0 +1,25 @@
+<h1>
+  Create a new user
+</h1>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |e| %>
+    <p><%= e %></p>
+  <% end %>
+<% end %>
+
+<%= form_for(@user) do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %><br>
+
+  <%= f.label :gender %>
+  <%= f.text_field :gender %><br>
+
+  <%= f.label :birthday %>
+  <%= f.date_field :birthday %><br>
+
+  <%= f.label :bloodtype %>
+  <%= f.text_field :bloodtype %><br>
+
+  <br><%= f.submit "Sign up!" %>
+<% end %>

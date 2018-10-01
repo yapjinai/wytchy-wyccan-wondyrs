@@ -1,1 +1,16 @@
-Hi!!!!!!!!
+Hi!!!!!!!!<br>
+
+<%= link_to "New user", new_user_path %><br>
+
+Log in: <br>
+
+<% if flash[:errors] %>
+  <% flash[:errors].each do |e| %>
+    <%= e %><br>
+  <% end %>
+<% end %>
+
+<%= form_tag controller: 'users', action: 'login', method: :post do %>
+  <%= text_field_tag :username %>
+  <%= submit_tag "Log in" %>
+<% end %>

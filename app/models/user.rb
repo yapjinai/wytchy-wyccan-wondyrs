@@ -4,7 +4,7 @@ class User < ApplicationRecord
   # birthday
   # bloodtype
 
-  validates :username, uniqueness: true
+  validates :username, presence: true, uniqueness: true
 
   has_many :items #via inventory
   has_many :spells #that they cast
