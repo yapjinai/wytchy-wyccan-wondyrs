@@ -1,0 +1,2 @@
+class SpellsUsersControllerController < ApplicationController
+end

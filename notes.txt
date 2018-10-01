@@ -5,6 +5,10 @@ rails g migration CreateJoinTableUsersSpells users spells --no-test-framework
 rails g migration CreateJoinTableSpellsItems spells items quantity:integer --no-test-framework
 rails g migration CreateJoinTablePossessions users items quantity:integer --no-test-framework
 
+rails g controller users_controller --no-test-framework
+rails g controller items_users_controller --no-test-framework
+rails g controller spells_users_controller --no-test-framework
+
 MODEL
     User
         validates :username, uniqueness: true
@@ -24,7 +28,7 @@ VIEW
             sign up
         R
             log in
-            homepage (must be logged in)
+            home (must be logged in)
         U
             user settings
         D
@@ -47,12 +51,12 @@ CONTROLLER
         R
         U
         D
-    possessions_controller
+    items_users_controller
         C - user gets an item somehow
         R
         U
         D - delete user's item
-    user_spells_controller
+    spells_users_controller
         C - create user-spell
         R
         U

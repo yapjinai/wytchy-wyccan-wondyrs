@@ -1,0 +1,2 @@
+module SpellsUsersControllerHelper
+end

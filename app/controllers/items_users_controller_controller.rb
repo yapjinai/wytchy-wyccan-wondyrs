@@ -1,0 +1,2 @@
+class ItemsUsersControllerController < ApplicationController
+end
