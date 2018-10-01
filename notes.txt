@@ -5,9 +5,8 @@ rails g migration CreateJoinTableUsersSpells users spells --no-test-framework
 rails g migration CreateJoinTableSpellsItems spells items quantity:integer --no-test-framework
 rails g migration CreateJoinTablePossessions users items quantity:integer --no-test-framework
 
-rails g controller users_controller --no-test-framework
-rails g controller items_users_controller --no-test-framework
-rails g controller spells_users_controller --no-test-framework
+rails g controller items_users --no-test-framework
+rails g controller spells_users --no-test-framework
 
 MODEL
     User

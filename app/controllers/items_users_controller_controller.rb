@@ -1,2 +1,0 @@
-class ItemsUsersControllerController < ApplicationController
-end
