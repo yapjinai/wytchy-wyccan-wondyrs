@@ -10,8 +10,8 @@
   </head>
 
   <body>
-    <% if @user && @user.id != nil %>
-      <%= render "users/userinfo" %>
+    <% if session[:user_id] %>
+      <%= render 'userinfo' %>
     <% end %>
     <%= yield %>
   </body>

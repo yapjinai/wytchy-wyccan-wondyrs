@@ -52,7 +52,7 @@ class UsersController < ApplicationController
     @user = User.find_by(username: params[:username])
     if @user
       session[:user_id] = @user.id
-      redirect_to '/home'
+      redirect_home
     else
       flash[:errors] ||= []
       flash[:errors] << "User doesn't exist"
@@ -66,7 +66,7 @@ class UsersController < ApplicationController
   end
 
   def home
-    if !@user
+    if session[:user_id] == nil
       redirect_to root_path
     end
   end
@@ -77,12 +77,18 @@ class UsersController < ApplicationController
     params.require(:user).permit(:username, :gender, :birthday, :bloodtype)
   end
 
+  def redirect_home
+    redirect_to root_path
+  end
+
   def find_user
+    # byebug
     if session[:user_id]
       @logged_in_user = User.find_by(id: session[:user_id])
-    end
-    if !@logged_in_user
-      session.delete(:user_id)
+      if @logged_in_user == nil
+        # this user id isn't in the database, delete this session
+        redirect_to '/logout'
+      end
     end
   end
 end
