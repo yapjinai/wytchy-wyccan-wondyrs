@@ -82,5 +82,8 @@ class UsersController < ApplicationController
     if session[:user_id]
       @user = User.find_by(id: session[:user_id])
     end
+    if !@user
+      session.delete(:user_id)
+    end
   end
 end
