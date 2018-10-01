@@ -24,12 +24,11 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @user = User.find_by(id: params[:id])
   end
 
 # UPDATE
   def edit
-
   end
 
   def update
@@ -80,9 +79,9 @@ class UsersController < ApplicationController
 
   def find_user
     if session[:user_id]
-      @user = User.find_by(id: session[:user_id])
+      @logged_in_user = User.find_by(id: session[:user_id])
     end
-    if !@user
+    if !@logged_in_user
       session.delete(:user_id)
     end
   end

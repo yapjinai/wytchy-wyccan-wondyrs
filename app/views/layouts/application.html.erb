@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <% if @user %>
+    <% if @user && @user.id != nil %>
       <%= render "users/userinfo" %>
     <% end %>
     <%= yield %>
