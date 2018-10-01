@@ -68,3 +68,19 @@ Need to seed:
 TO BE ADDED LATER:
     User authentication
     Twitter integration
+
+---------
+
+(get: users/new, post: users/create)
+sign-up form
+  -> puts a new user in the db
+  -> provides user with session in cookies
+
+(get: root, post: users/login)
+logging-in
+  -> either searches for a session
+  -> or asks for credentials when session not found
+
+(post: users/logout)
+logging-out
+  -> removes session from cookies
