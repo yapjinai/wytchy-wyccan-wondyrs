@@ -9,6 +9,14 @@ s2 = Spell.create(
   name: "Love",
   description: "Causes people to fall in love"
 )
+s3 = Spell.create(
+  name: 'Broken Arrow',
+  description: 'Cease conflict between you and an acquaintance.'
+)
+s4 = Spell.create(
+  name: 'Hex',
+  description: 'Damn someone to unluckiness for 3 days.'
+)
 
 i1 = Item.create(
   name: "Mushroom"

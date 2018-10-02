@@ -28,10 +28,12 @@ class UsersController < ApplicationController
 
 # UPDATE
   def edit
+    puts "@ user is " + session[:user_id].to_s
   end
 
   def update
-
+    @user = @user.update(user_params)
+    redirect_home
   end
 
 # DELETE

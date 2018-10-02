@@ -1,0 +1,27 @@
+nav {
+  background: lightblue;
+}
+h1,h2,h3,h4,h5,h6 {
+  text-align: center;
+}
+
+
+.header-wrapper {
+  background: #333333;
+  padding-top: 5px;
+}
+
+#userinfo-header {
+  display: inline;
+}
+
+#userinfo-header p {
+  font-family: sans-serif;
+  display: inline;
+  color: white;
+}
+
+#userinfo-header form {
+  display: inline;
+  float: right;
+}

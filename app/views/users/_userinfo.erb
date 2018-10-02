@@ -1,4 +1,7 @@
-<div class="userinfo">
-  <p>You're logged in as <%= @logged_in_user.username %></p>
-  <%= button_to "Sign out", '/logout' %>
+<div class="header-wrapper">
+  <div id="userinfo-header">
+    <p>🔮You're logged in as: <%= @logged_in_user.username %></p>
+    <%= button_to "Sign out", '/logout' %>
+  </div>
+  <hr>
 </div>
