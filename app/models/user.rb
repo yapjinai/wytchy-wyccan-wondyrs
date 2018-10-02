@@ -3,6 +3,7 @@ class User < ApplicationRecord
   # gender
   # birthday
   # bloodtype
+  has_secure_password
 
   validates :username, presence: true, uniqueness: true
 

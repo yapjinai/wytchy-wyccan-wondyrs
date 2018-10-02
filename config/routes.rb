@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users
   resources :spells, only: [:index, :show]
   resources :items, only: [:index, :show]
-  resources :items_users, only: [:index, :create]
+  resources :possessions, only: [:index, :create]
 
   root to: 'application#index'
   post '/login', to: 'users#login'
@@ -12,5 +12,16 @@ Rails.application.routes.draw do
 
   get '/home', to: 'users#home'
 
-  get '/buyitem', to: 'items_users#new'
+  # get '/login', to: 'sessions#new', as 'login'
+  # post '/login', to: 'sessions#create', as 'login'
+  # rails g controller Sessions
+  # def new
+  #   render :new
+  # end
+  # def create
+  #   # find out of we have a user with this username
+  #   # get that user record from db
+  #   # authenticate that user
+  # end
+
 end

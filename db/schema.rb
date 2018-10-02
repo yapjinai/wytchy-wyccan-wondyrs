@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2018_10_01_154037) do
     t.string "bloodtype"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "password_digest"
   end
 
 end
