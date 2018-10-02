@@ -1,0 +1,5 @@
+<h1>Purchase a new item</h1>
+<%= form_for(@possession, url: {action: 'create'}) do |f| %>
+  <%= f.select :item_id, @items_options %>
+  <%= f.submit %>
+<% end %>

@@ -1,4 +1,4 @@
-class SpellsUsersController < ApplicationController
+class CastingsController < ApplicationController
 
 # CREATE
   def new

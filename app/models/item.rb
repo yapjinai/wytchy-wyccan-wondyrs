@@ -1,7 +1,7 @@
 class Item < ApplicationRecord
-  has_many :items_users
-  has_many :users, through: :items_users #who own them
+  has_many :possessions
+  has_many :users, through: :possessions #who own them
 
-  has_many :items_spells
-  has_many :spells, through: :items_spells #for which they are required
+  has_many :recipes
+  has_many :spells, through: :recipes #for which they are required
 end

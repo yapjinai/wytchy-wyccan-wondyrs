@@ -1,6 +1,6 @@
 <div class="header-wrapper">
   <div id="userinfo-header">
-    <p>🔮 <%= @logged_in_user.username %></p>
+    <p>🔮 <%= link_to @logged_in_user.username, @logged_in_user %></p>
     <%= button_to "Sign out", '/logout' %>
   </div>
   <hr>

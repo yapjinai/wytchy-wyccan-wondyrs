@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_02_191134) do
+ActiveRecord::Schema.define(version: 2018_10_01_154037) do
+
+  create_table "castings", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "spell_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -18,16 +25,20 @@ ActiveRecord::Schema.define(version: 2018_10_02_191134) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "items_spells", id: false, force: :cascade do |t|
-    t.integer "spell_id", null: false
-    t.integer "item_id", null: false
+  create_table "possessions", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "item_id"
     t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "items_users", id: false, force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "item_id", null: false
+  create_table "recipes", force: :cascade do |t|
+    t.integer "spell_id"
+    t.integer "item_id"
     t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "spells", force: :cascade do |t|
@@ -35,11 +46,6 @@ ActiveRecord::Schema.define(version: 2018_10_02_191134) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "spells_users", id: false, force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "spell_id", null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -3,9 +3,11 @@
 <h3><%= @user.username %> has the following items:</h3>
 
 <ul>
-  <% @user.items.each do |i| %>
+  <% @user.possessions.each do |p| %>
   <li>
-    <%= link_to i.name, i %>
+
+    <%= p.quantity %>
+    <%= link_to p.item.name, p.item %>
   </li>
   <% end %>
 </ul>
