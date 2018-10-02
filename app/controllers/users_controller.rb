@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
 
-# CREATE
   def new
     @user = User.new
   end
@@ -17,7 +16,6 @@ class UsersController < ApplicationController
     end
   end
 
-# READ
   def index
     @users = User.all
   end
@@ -26,7 +24,6 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
   end
 
-# UPDATE
   def edit
     puts "@ user is " + session[:user_id].to_s
   end
@@ -36,18 +33,16 @@ class UsersController < ApplicationController
     redirect_home
   end
 
-# DELETE
   def destroy
 
   end
 
-###########
 # OTHER
 
-  # def authenticate
-  #   session[:username] = params[:username]
-  #   redirect_to 'home'
-  # end
+  def authenticate
+    session[:username] = params[:username]
+    redirect_to 'home'
+  end
 
   def login
     @user = User.find_by(username: params[:username])
@@ -75,7 +70,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :gender, :birthday, :bloodtype)
+    params.require(:user).permit(:username, :password, :gender, :birthday, :bloodtype)
   end
 
   def redirect_home
