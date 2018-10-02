@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_02_134425) do
+ActiveRecord::Schema.define(version: 2018_10_02_191134) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2018_10_02_134425) do
   create_table "items_users", id: false, force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "item_id", null: false
+    t.integer "quantity"
   end
 
   create_table "spells", force: :cascade do |t|

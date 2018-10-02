@@ -1,0 +1,10 @@
+<h1>Purchase a new item</h1>
+<%= form_tag do %>
+
+  <% items.all.each do |i| %>
+    <%= label_tag(:item_id, i.name) %>
+    <%= number_field_tag(:quantity) %>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>
