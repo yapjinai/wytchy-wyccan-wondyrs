@@ -1,0 +1,11 @@
+<h1>Spell page for <%= @spell.name %>.</h1>
+
+<h3><%= @spell.name %> requires the following items:</h3>
+
+<ul>
+  <% @spell.items.each do |i| %>
+  <li>
+    <%= i.name %>
+  </li>
+  <% end %>
+</ul>

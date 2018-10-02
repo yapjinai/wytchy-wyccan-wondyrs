@@ -9,9 +9,16 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <nav>
+    <%= link_to "Home", '/' %>
+    <%= link_to "All users", users_path %>
+    <%= link_to "All spells", spells_path %>
+    <%= link_to "All items", items_path %>
+  </nav>
+
   <body>
     <% if session[:user_id] %>
-      <%= render 'userinfo' %>
+      <%= render 'users/userinfo' %>
     <% end %>
     <%= yield %>
   </body>

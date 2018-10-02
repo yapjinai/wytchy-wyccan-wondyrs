@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :users
+  resources :spells, only: [:index, :show]
+  resources :items, only: [:index, :show]
 
   root to: 'application#index'
   post '/login', to: 'users#login'

@@ -1,1 +1,21 @@
-This is the page of <%= @user.username %>
+<h1>User page for <%= @user.username %>.</h1>
+
+<h3><%= @user.username %> has the following items:</h3>
+
+<ul>
+  <% @user.items.each do |i| %>
+  <li>
+    <%= link_to i.name, i %>
+  </li>
+  <% end %>
+</ul>
+
+<h3><%= @user.username %> has cast the following spells:</h3>
+
+<ul>
+  <% @user.spells.each do |s| %>
+  <li>
+    <%= link_to s.name, s %>
+  </li>
+  <% end %>
+</ul>

@@ -6,6 +6,9 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: true
 
-  has_many :items #via inventory
-  has_many :spells #that they cast
+  has_many :items_users
+  has_many :items, through: :items_users # that they own
+
+  has_many :spells_users
+  has_many :spells, through: :spells_users # that they cast
 end

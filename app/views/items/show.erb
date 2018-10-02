@@ -1,0 +1,19 @@
+<h1>Item page for <%= @item.name %>.</h1>
+
+<h3>Spells that use <%= @item.name %>:</h3>
+
+<ul>
+  <% @item.spells.each do |s| %>
+  <li>
+    Spell: <%= s.name %><br>
+    Requires:<br>
+      <ol>
+        <% s.items.each do |i| %>
+        <li>
+          <%= i.name %>
+        </li>
+        <% end %>
+      </ol>
+  </li>
+  <% end %>
+</ul>
