@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users
   resources :spells, only: [:index, :show]
   resources :items, only: [:index, :show]
-  resources :possessions, only: [:index, :create]
+  resources :possessions, only: [:create]
 
   root to: 'application#index'
   post '/login', to: 'users#login'
@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get '/logout', to: 'users#logout'
 
   get '/home', to: 'users#home'
+
+  get '/buyitem', to: 'possessions#new'
 
   # get '/login', to: 'sessions#new', as 'login'
   # post '/login', to: 'sessions#create', as 'login'

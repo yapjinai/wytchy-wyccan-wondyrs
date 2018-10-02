@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :find_user, only: [:login, :logout, :authenticate]
 
 
   def new
