@@ -1,0 +1,6 @@
+<%= button_to "Make an account", new_user_path, method: :get %><br>
+<br><%= form_tag sessions_path do %>
+  <%= text_field_tag :username, nil, placeholder: 'username' %><br>
+  <%= password_field_tag :password, nil, placeholder: 'password' %><br>
+  <br><%= submit_tag "Sign In" %>
+<% end %>
