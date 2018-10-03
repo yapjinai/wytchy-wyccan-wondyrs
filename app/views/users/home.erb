@@ -3,14 +3,13 @@
 </h2>
 
 <p>Gender: <%= @logged_in_user.gender %></p>
-<p>Birthday: <%= @logged_in_user.birthday %></p>
-<p>Blood: <%= @logged_in_user.bloodtype %></p>
+<p>Birthday: <%= @logged_in_user.birthday.strftime("%B %d, %Y") %></p>
+<p>Bloodtype: <%= @logged_in_user.bloodtype %></p>
 
 <%= button_to "Edit Profile", edit_user_path(@logged_in_user), method: :get %>
 
 <% if @logged_in_user.possessions.empty? %>
   <h3>You have no items in your inventory!</h3>
-  <p><%= link_to "Purchase items", buyitem_path %></p>
 <% else %>
   <h3>You have the following items:</h3>
   <ul>
@@ -39,6 +38,8 @@
     <% end %>
   </ul>
 <% end %>
+<p><%= button_to "Purchase items", buyitem_path, method: :get %></p>
+
 
 
 <!--
