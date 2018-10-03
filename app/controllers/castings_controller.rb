@@ -1,10 +1,10 @@
 class CastingsController < ApplicationController
 
 # CREATE
-  def new
-    @spells_options = Spell.all.map { |s| [s.name, s.id] }
-    @casting = Casting.new
-  end
+  # def new
+  #   @spells_options = Spell.all.map { |s| [s.name, s.id] }
+  #   @casting = Casting.new
+  # end
 
   def create
     spell_id = params[:casting][:spell_id].to_i

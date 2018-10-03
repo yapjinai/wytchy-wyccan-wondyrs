@@ -12,7 +12,8 @@ end
 def create_spell(spell)
   Spell.create(
     name: spell[:title],
-    description: spell[:description]
+    description: spell[:description],
+    binate: spell[:binate]
   )
 end
 
@@ -35,6 +36,10 @@ def parse_spell(line)
   spell_info = line.split('=')[0].strip
   spell[:recipe_string] = line.split('=')[1].strip
   spell[:title] = spell_info.split(';')[0].strip.titleize
+  if spell[:title][0] == "*"
+    spell[:binate] = true
+    spell[:title] = spell[:title][1..-1]
+  end
   spell[:description] = spell_info.split(';')[1].strip
   spell
 end

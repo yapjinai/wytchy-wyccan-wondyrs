@@ -11,5 +11,5 @@
 </ul>
 
 <% if @logged_in_user %>
-  <%= link_to "Purchase items", buyitem_path %>
+  <%= button_to "Purchase items", buyitem_path, method: :get %>
 <% end %>

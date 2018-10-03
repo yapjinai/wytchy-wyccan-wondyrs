@@ -4,6 +4,12 @@
   <%= @spell.description %>
 </p>
 
+<% if @spell.binate %>
+<p>
+  This spell acts upon two targets.
+</p>
+<% end %>
+
 <h3><%= @spell.name %> requires the following items:</h3>
 
 <ul>
@@ -14,9 +20,15 @@
   <% end %>
 </ul>
 
+<h3>Cast this spell</h3>
+
 <% if @logged_in_user %>
   <%= form_for(@casting, url: {controller: 'castings', action: 'create'}) do |f| %>
     <%= f.hidden_field :spell_id, value: @spell.id %>
-    <%= f.submit "Cast this spell" %>
+    Primary target: <%= f.text_field :subject_1 %><br>
+    <% if @spell.binate %>
+      Secondary target: <%= f.text_field :subject_2 %><br>
+    <% end %>
+    <%= f.submit "Cast", confirm: {data:"Are you sure? This action cannot be undone."} %>
   <% end %>
 <% end %>

@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 2018_10_01_154037) do
   create_table "castings", force: :cascade do |t|
     t.integer "user_id"
     t.integer "spell_id"
+    t.string "subject_1"
+    t.string "subject_2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -45,8 +47,7 @@ ActiveRecord::Schema.define(version: 2018_10_01_154037) do
   create_table "spells", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.string "subject_1"
-    t.string "subject_2"
+    t.boolean "binate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
