@@ -9,3 +9,7 @@
 <% end %>
 
 </ul>
+
+<% if @logged_in_user %>
+  <%= link_to "Cast a spell", castspell_path %>
+<% end %>

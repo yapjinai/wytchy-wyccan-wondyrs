@@ -17,7 +17,7 @@ class PossessionsController < ApplicationController
       @possession.update(quantity: quantity)
 
       flash[:notice] = "#{@item.name} purchased."
-      redirect_to @logged_in_user
+      redirect_to @item
     end
 
   # READ

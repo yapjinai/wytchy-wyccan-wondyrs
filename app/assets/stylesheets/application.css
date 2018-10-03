@@ -45,6 +45,21 @@ h1,h2,h3,h4,h5,h6 {
   text-align: center;
 }
 
-.notice {
+.flash-notice {
   background: green;
+}
+.flash-error {
+  background: red;
+}
+
+
+/* users show pages */
+
+.item-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item {
+  display: inline-flex;
 }

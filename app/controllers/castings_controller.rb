@@ -2,7 +2,8 @@ class CastingsController < ApplicationController
 
 # CREATE
   def new
-
+    @spells_options = Spell.all.map { |s| [s.name, s.id] }
+    @casting = Casting.new
   end
 
   def create
@@ -13,7 +14,7 @@ class CastingsController < ApplicationController
       flash[:notice] = "#{@spell.name} cast."
       redirect_to @logged_in_user
     else
-      flash[:notice] = "Insufficient items for #{@spell.name}."
+      flash[:error] = "Insufficient items for #{@spell.name}."
       redirect_to @spell
     end
   end
@@ -47,6 +48,7 @@ class CastingsController < ApplicationController
   end
 
   def cast_spell(user, spell)
+    #deplete inventory
     spell.recipes.each do |r|
       possession = user.possessions.find_by(item: r.item)
       possession.quantity -= r.quantity
@@ -55,6 +57,8 @@ class CastingsController < ApplicationController
       end
       possession.save
     end
+    #create casting
+    Casting.create(user: user, spell: spell)
   end
 
 end

@@ -36,8 +36,11 @@
     </header>
 
     <main>
-      <div class="notice">
+      <div class="flash-notice">
         <%= flash[:notice] %>
+      </div>
+      <div class="flash-error">
+        <%= flash[:error] %>
       </div>
 
       <%= yield %>
