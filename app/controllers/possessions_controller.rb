@@ -6,7 +6,6 @@ class PossessionsController < ApplicationController
     end
 
     def create
-      byebug
       item_id = params[:possession][:item_id].to_i
       @item = Item.find_by(id: item_id)
 

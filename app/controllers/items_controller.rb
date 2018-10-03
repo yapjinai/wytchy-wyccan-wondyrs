@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @possession = Possession.new
     @item = Item.find_by(id: params[:id])
   end
 end

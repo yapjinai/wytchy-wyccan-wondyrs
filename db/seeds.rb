@@ -1,3 +1,7 @@
+Spell.delete_all
+Item.delete_all
+Recipe.delete_all
+
 s1 = Spell.create(
   name: "Death",
   description: "Causes someone to die a slow, painful death. Use with discretion"
@@ -15,18 +19,20 @@ s4 = Spell.create(
   description: 'Damn someone to unluckiness for 3 days.'
 )
 
-i1 = Item.create(
-  name: "Mushroom"
-)
-i2 = Item.create(
-  name: "Twig"
-)
-i3 = Item.create(
-  name: 'Crushed Clove'
-)
-Item.create(name: 'Squirrel Skull')
-Item.create(name: 'Spider Ichor')
+i1 = Item.create(name: "Mushroom")
+i2 = Item.create(name: "Twig")
+i3 = Item.create(name: 'Crushed Clove')
+i4 = Item.create(name: 'Squirrel Skull')
+i5 = Item.create(name: 'Spider Ichor')
 
-ItemsSpell.create(spell: s1, item: i1, quantity: 4)
-ItemsSpell.create(spell: s1, item: i2, quantity: 2)
-ItemsSpell.create(spell: s1, item: Item.last, quantity: 1)
+Recipe.create(spell: s1, item: i1, quantity: 4)
+Recipe.create(spell: s1, item: i2, quantity: 2)
+Recipe.create(spell: s1, item: i3, quantity: 1)
+Recipe.create(spell: s2, item: i5, quantity: 3)
+Recipe.create(spell: s2, item: i4, quantity: 2)
+Recipe.create(spell: s3, item: i3, quantity: 1)
+Recipe.create(spell: s3, item: i1, quantity: 3)
+Recipe.create(spell: s4, item: i2, quantity: 1)
+Recipe.create(spell: s4, item: i3, quantity: 2)
+Recipe.create(spell: s4, item: i4, quantity: 5)
+Recipe.create(spell: s4, item: i5, quantity: 1)

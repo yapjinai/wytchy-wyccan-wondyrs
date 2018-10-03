@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
-  
+  skip_before_action :find_user, only: [:new, :create]
+
   def new
-  end 
+  end
 
   def create 
     @user = User.find_by(username: params[:username])
@@ -20,4 +21,3 @@ class SessionsController < ApplicationController
   end 
 
 end
-

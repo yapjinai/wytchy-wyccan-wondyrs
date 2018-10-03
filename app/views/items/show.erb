@@ -5,15 +5,12 @@
 <ul>
   <% @item.spells.each do |s| %>
   <li>
-    Spell: <%= s.name %><br>
-    Requires:<br>
-      <ol>
-        <% s.items.each do |i| %>
-        <li>
-          <%= i.name %>
-        </li>
-        <% end %>
-      </ol>
+    <%= link_to s.name, s %>
   </li>
   <% end %>
 </ul>
+
+<%= form_for(@possession, url: {controller: 'possessions', action: 'create'}) do |f| %>
+  <%= f.hidden_field :item_id, value: @item.id %>
+  <%= f.submit "Purchase #{@item.name}" %>
+<% end %>
