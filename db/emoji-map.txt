@@ -1,0 +1,34 @@
+🍄: mushroom
+🗝: old key
+🍵: cauldron
+🦊: fox
+🐈: cat
+🕷: spider
+🍙: onigiri
+💉: blood
+💄: lover's lipstick
+👠: red slipper
+📜: empty scroll
+👓: spectacles
+🕯: candle
+📖: tome
+🌶: chili pepper
+🏹: bow & arrow
+🦊💀: fox skull
+🐈💀: cat skull
+🕷💀: spider skull
+🦊☠️: fox corpse
+🐈☠️: cat corpse
+🕷☠️: spider corpse
+🗝📜: ancient untranslated spell
+📜👓: old spectacles
+🎭💍: mood ring
+🕷🍺: spider ichor
+🦂🍺: scorpion ichor
+🦂💉: scorpion stinger
+💄🕯: red candle
+🕷🕯: black candle
+🔏📖: ancient untranslated tome
+
+broken arrow; Mends the relationship between yourself and a target. = 🏹x1, 💄x3, 🕯x7
+hex; Damn someone to three day's bad luck. = 🎭💍x1, 🌶x1, 🕯x2
