@@ -22,7 +22,10 @@ header {
   }
 
 nav {
-  background: hotpink;
+  /* background: hotpink; */
+  background: url('bg-grass.jpeg');
+  background-size: cover;
+  background-position: bottom;
   padding: 5px;
 
   display: flex;
@@ -74,8 +77,9 @@ main {
 
 .breadcrumbs {
   /* background: #ddd; */
-  background: url('bg-grass.jpg');
+  background: url('bg-paper.jpg');
   background-size: cover;
+  background-position: center;
   margin: 25px;
   padding: 25px;
   font-size: xx-large;
@@ -83,7 +87,7 @@ main {
 
 .content {
   background: url('bg-paper.jpg');
-  background-size: contain;
+  background-size: cover;
   margin: 25px;
   padding: 25px;
 }

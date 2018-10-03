@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_03_143820) do
+ActiveRecord::Schema.define(version: 2018_10_01_154037) do
 
   create_table "castings", force: :cascade do |t|
     t.integer "user_id"
@@ -21,9 +21,9 @@ ActiveRecord::Schema.define(version: 2018_10_03_143820) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
+    t.string "symbol"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "symbol"
   end
 
   create_table "possessions", force: :cascade do |t|
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 2018_10_03_143820) do
   create_table "spells", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.string "subject_1"
+    t.string "subject_2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
