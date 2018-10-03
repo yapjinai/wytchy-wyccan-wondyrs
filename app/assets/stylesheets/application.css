@@ -1,3 +1,13 @@
+
+body {
+  background: url('bg-astrology.jpg');
+  background-size: cover;
+  font-family: cursive;
+  font-size: large;
+}
+
+/* nav layout styling */
+
 header {
   font-size: 20px;
     /* padding-top: 5px; */
@@ -5,6 +15,10 @@ header {
 
   header a {
     color: white;
+  }
+
+  header a:hover {
+    color: lightpink;
   }
 
 nav {
@@ -44,12 +58,9 @@ main {
   max-width: 600px;
 }
 
-h1,h2,h3,h4,h5,h6 {
-  text-align: center;
-}
-
 .notifications {
   height: 60px;
+  padding: 25px;
 }
 
   .flash-notice {
@@ -62,11 +73,27 @@ h1,h2,h3,h4,h5,h6 {
   }
 
 .breadcrumbs {
-  background: #ddd;
-  padding: 5px;
+  /* background: #ddd; */
+  background: url('bg-grass.jpg');
+  background-size: cover;
+  margin: 25px;
+  padding: 25px;
 }
 
-/* users show pages */
+.content {
+  background: url('bg-paper.jpg');
+  background-size: contain;
+  margin: 25px;
+  padding: 25px;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  text-align: center;
+  font-family: cursive;
+  font-size: xx-large;
+}
+
+/* users' show pages */
 
 .item-container {
   display: flex;

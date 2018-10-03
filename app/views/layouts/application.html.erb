@@ -8,7 +8,7 @@
     <%= stylesheet_link_tag 'semantic', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %> -->
   </head>
 
   <body>
@@ -52,7 +52,9 @@
 
       <%= render "breadcrumbs" unless @disable_breadcrumbs %>
 
-      <%= yield %>
+      <div class="content">
+        <%= yield %>
+      </div>
     </main>
 
   </body>

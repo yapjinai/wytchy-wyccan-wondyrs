@@ -1,12 +1,14 @@
-<h1>User page for <%= @user.username %>.</h1>
+<h1>User page for <%= @user.username %></h1>
 
-
-<h3><%= @user.username %> has cast the following spells:</h3>
-
-<ul>
-  <% @user.castings.each do |c| %>
-  <li>
-    <%= link_to c.spell.name, c.spell %> on <%= c.created_at.strftime("%B %d, %Y") %>
-  </li>
-  <% end %>
-</ul>
+<% if @user.castings.empty? %>
+  <h3><%= @user.username %> has not cast any spells!</h3>
+<% else %>
+  <h3><%= @user.username %> has cast the following spells:</h3>
+  <ul>
+    <% @user.castings.each do |c| %>
+    <li>
+      <%= link_to c.spell.name, c.spell %> on <%= c.created_at.strftime("%B %d, %Y") %>
+    </li>
+    <% end %>
+  </ul>
+<% end %>

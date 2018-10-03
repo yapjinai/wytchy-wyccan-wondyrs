@@ -1,6 +1,11 @@
 <div class="breadcrumbs">
-  <%= link_to "Users", users_path %>
-  <% if @user %>
-    > <%= link_to @user.username, @user %>
+  <% current_uri = request.env['PATH_INFO'] %>
+  <% if current_uri == "/home" %>
+    <%= link_to "Home", home_path %>
+  <% else %>
+    <%= link_to "Users", users_path %>
+    <% if @user %>
+      > <%= link_to @user.username, @user %>
+    <% end %>
   <% end %>
 </div>
