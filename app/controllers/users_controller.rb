@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = @user.update(user_params)
+    @logged_in_user = @logged_in_user.update(user_params)
     redirect_home
   end
 

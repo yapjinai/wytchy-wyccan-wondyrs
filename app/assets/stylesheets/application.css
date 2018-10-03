@@ -49,15 +49,16 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .notifications {
-  height: 40px;
-  padding: 5px;
+  height: 60px;
 }
 
   .flash-notice {
     background: green;
+    padding: 5px;
   }
   .flash-error {
     background: red;
+    padding: 5px;
   }
 
 .breadcrumbs {
