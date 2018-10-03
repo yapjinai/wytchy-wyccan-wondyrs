@@ -1,7 +1,7 @@
 class PossessionsController < ApplicationController
   # CREATE
     def new
-      @items_options = Item.all.map { |i| [i.name, i.id] }
+      @items_options = Item.all.map { |i| [i.symbol, i.id] }
       @possession = Possession.new
     end
 
