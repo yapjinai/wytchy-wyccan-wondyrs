@@ -50,12 +50,12 @@ ActiveRecord::Schema.define(version: 2018_10_01_154037) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
+    t.text "password_digest"
     t.string "gender"
     t.datetime "birthday"
     t.string "bloodtype"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "password_digest"
   end
 
 end
