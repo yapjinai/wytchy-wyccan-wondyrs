@@ -5,25 +5,43 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag 'Semantic-UI-CSS/semantic', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <nav>
-    <%= link_to "Home", '/' %>
-    <%= link_to "All users", users_path %>
-    <%= link_to "All spells", spells_path %>
-    <%= link_to "All items", items_path %>
-  </nav>
-
-  <div class="notice">
-    <%= flash[:notice] %>
-  </div>
-
   <body>
-    <% if session[:user_id] %>
-      <%= render 'users/userinfo' %>
-    <% end %>
-    <%= yield %>
+    <header>
+      <nav>
+        <div class="nav-child">
+          <%= link_to "Home", '/' %>
+        </div>
+        <div class="nav-child">
+          <%= link_to "All users", users_path %>
+        </div>
+        <div class="nav-child">
+          <%= link_to "All spells", spells_path %>
+        </div>
+        <div class="nav-child">
+          <%= link_to "All items", items_path %>
+        </div>
+      </nav>
+
+      <% if session[:user_id] %>
+      <div class="user-nav">
+        <%= render 'users/userinfo' %>
+      </div>
+      <% end %>
+    </header>
+
+    <main>
+      <div class="notice">
+        <%= flash[:notice] %>
+      </div>
+
+      <%= yield %>
+    </main>
+
   </body>
 </html>

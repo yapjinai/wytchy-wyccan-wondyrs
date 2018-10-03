@@ -1,7 +1,2 @@
-<div class="header-wrapper">
-  <div id="userinfo-header">
-    <p>🔮 <%= link_to @logged_in_user.username, @logged_in_user %></p>
-    <%= button_to "Logout", logout_path, method: :delete %>
-  </div>
-  <hr>
-</div>
+<div>🔮 <%= link_to @logged_in_user.username, @logged_in_user %></div>
+<div><%= button_to "Logout", logout_path, method: :delete, class: 'secondary' %></div>
