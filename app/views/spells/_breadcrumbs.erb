@@ -1,0 +1,6 @@
+<div class="breadcrumbs">
+  <%= link_to "Spells", spells_path %>
+  <% if @spell %>
+    >> <%= link_to @spell.name, @spell %>
+  <% end %>
+</div>
