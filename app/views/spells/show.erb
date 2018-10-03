@@ -13,3 +13,8 @@
   </li>
   <% end %>
 </ul>
+
+<%= form_for(@casting, url: {controller: 'castings', action: 'create'}) do |f| %>
+  <%= f.hidden_field :spell_id, value: @spell.id %>
+  <%= f.submit "Cast this spell" %>
+<% end %>

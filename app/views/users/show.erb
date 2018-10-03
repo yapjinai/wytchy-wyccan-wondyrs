@@ -6,6 +6,18 @@
   <% @user.possessions.each do |p| %>
   <li>
     <%= link_to pluralize(p.quantity, p.item.name), p.item %>
+
+    <% if p.quantity > 1 %>
+      <%= form_for(p, url: {controller: 'possessions', action: 'discard_one'}) do |f| %>
+        <%= f.hidden_field :id, value: p.id %>
+        <%= f.submit "Discard one" %>
+      <% end %>
+    <% end %>
+
+    <%= form_for(p, url: {controller: 'possessions', action: 'discard_all'}) do |f| %>
+      <%= f.hidden_field :id, value: p.id %>
+      <%= f.submit "Discard all" %>
+    <% end %>
   </li>
   <% end %>
 </ul>

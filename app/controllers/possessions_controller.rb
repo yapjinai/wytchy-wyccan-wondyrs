@@ -17,7 +17,7 @@ class PossessionsController < ApplicationController
       @possession.update(quantity: quantity)
 
       flash[:notice] = "#{@item.name} purchased."
-      redirect_to items_path
+      redirect_to @logged_in_user
     end
 
   # READ
@@ -32,8 +32,21 @@ class PossessionsController < ApplicationController
     end
 
   # DELETE
-    def destroy
+    def discard_one
+      possession = Possession.find_by(id: params[:possession][:id])
+      if possession.quantity == 1
+        discard_all
+      else
+        possession.quantity -= 1
+        possession.save
+        redirect_to @logged_in_user
+      end
+    end
 
+    def discard_all
+      possession = Possession.find_by(id: params[:possession][:id])
+      possession.destroy
+      redirect_to @logged_in_user
     end
 
 end
