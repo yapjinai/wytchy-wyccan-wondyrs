@@ -84,3 +84,36 @@ logging-in
 (post: users/logout)
 logging-out
   -> removes session from cookies
+
+
+item symbols!
+🍄: mushroom
+🗝: old key
+🍵: cauldron
+🦊: fox
+🐈: cat
+🕷: spider
+🍙: onigiri
+💉: blood
+💄: lover's lipstick
+👠: red slipper
+📜: empty scroll
+👓: spectacles
+🕯: candle
+📖: tome
+🌶: chili pepper
+🦊💀: fox skull
+🐈💀: cat skull
+🕷💀: spider skull
+🦊☠️: fox corpse
+🐈☠️: cat corpse
+🕷☠️: spider corpse
+🗝📜: ancient untranslated spell
+📜👓: old spectacles
+🎭💍: mood ring
+🕷🍺: spider ichor
+🦂🍺: scorpion ichor
+🦂💉: scorpion stinger
+💄🕯: red candle
+🕷🕯: black candle
+🔏📖: ancient untranslated tome
