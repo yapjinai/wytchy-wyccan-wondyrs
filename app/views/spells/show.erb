@@ -1,11 +1,15 @@
 <h1>Spell page for <%= @spell.name %>.</h1>
 
+<p>
+  <%= @spell.description %>
+</p>
+
 <h3><%= @spell.name %> requires the following items:</h3>
 
 <ul>
-  <% @spell.items.each do |i| %>
+  <% @spell.recipes.each do |r| %>
   <li>
-    <%= i.name %>
+    <%= link_to pluralize(r.quantity, r.item.name), r.item %>
   </li>
   <% end %>
 </ul>

@@ -5,9 +5,7 @@
 <ul>
   <% @user.possessions.each do |p| %>
   <li>
-
     <%= link_to pluralize(p.quantity, p.item.name), p.item %>
-
   </li>
   <% end %>
 </ul>
