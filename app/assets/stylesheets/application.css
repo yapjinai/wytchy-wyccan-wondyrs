@@ -3,8 +3,12 @@ header {
     /* padding-top: 5px; */
 }
 
+  header a {
+    color: white;
+  }
+
 nav {
-  background: lightblue;
+  background: hotpink;
   padding: 5px;
 
   display: flex;
@@ -12,7 +16,6 @@ nav {
 }
 
   nav .nav-child {
-
   }
 
 .user-nav {
@@ -51,7 +54,6 @@ h1,h2,h3,h4,h5,h6 {
 .flash-error {
   background: red;
 }
-
 
 /* users show pages */
 

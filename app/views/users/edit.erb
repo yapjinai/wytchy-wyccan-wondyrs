@@ -2,13 +2,13 @@
 
 <%= form_for(@logged_in_user) do |f| %>
   <%= f.label :gender %>
-  <%= f.text_field :gender %><br>
+  <%= f.select :gender, [['Sorceress'], ['Warlock'], ['Otherkin']] %><br>
 
   <%= f.label :birthday %>
   <%= f.date_field :birthday %><br>
 
   <%= f.label :bloodtype %>
-  <%= f.text_field :bloodtype %><br>
+  <%= f.select :bloodtype, [['A'], ['B'], ['AB'], ['O']] %><br>
 
-  <br><%= f.submit "Edit info" %>
+  <br><%= f.submit "Save" %>
 <% end %>
