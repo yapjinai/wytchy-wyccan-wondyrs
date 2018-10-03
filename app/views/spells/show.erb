@@ -29,6 +29,6 @@
     <% if @spell.binate %>
       Secondary target: <%= f.text_field :subject_2 %><br>
     <% end %>
-    <%= f.submit "Cast", confirm: {data:"Are you sure? This action cannot be undone."} %>
+    <%= f.submit "Cast", data: { confirm: "Are you sure? This action cannot be undone." } %>
   <% end %>
 <% end %>
