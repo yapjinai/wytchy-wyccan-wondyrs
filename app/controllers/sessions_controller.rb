@@ -1,16 +1,22 @@
 class SessionsController < ApplicationController
   
-  # login page
   def new
   end 
 
-  # create session + distribute cookie
   def create 
+    @user = User.find_by(username: params[:username])
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      redirect_to @user 
+    else 
+      flash[:notice] = "Username or password not recognizd."
+      redirect_to login_path
+    end
   end 
 
-  # post from logout button to here
-  # destroys session entry
   def destroy
+    session.delete(:user_id)
+    redirect_to login_path
   end 
 
 end
