@@ -8,6 +8,40 @@
 
 <%= button_to "Edit Profile", edit_user_path(@logged_in_user), method: :get %>
 
+<% if @logged_in_user.possessions.empty? %>
+  <h3>You have no items in your inventory!</h3>
+  <p><%= link_to "Purchase items", buyitem_path %></p>
+<% else %>
+  <h3>You have the following items:</h3>
+  <ul>
+    <% @logged_in_user.possessions.each do |p| %>
+    <li>
+      <div class="item-container">
+        <div class="item">
+          <%= link_to pluralize(p.quantity, p.item.name), p.item %>
+        </div>
+
+        <div class="item">
+          <% if p.quantity > 1 %>
+            <%= form_for(p, url: {controller: 'possessions', action: 'discard_one'}) do |f| %>
+              <%= f.hidden_field :id, value: p.id %>
+              <%= f.submit "Discard one" %>
+            <% end %>
+          <% end %>
+
+          <%= form_for(p, url: {controller: 'possessions', action: 'discard_all'}) do |f| %>
+            <%= f.hidden_field :id, value: p.id %>
+            <%= f.submit "Discard all" %>
+          <% end %>
+        </div>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<!--
 <h3>
   Active Spells
 </h3>
@@ -18,4 +52,4 @@
   <li>
     Placeholder
   </li>
-</ul>
+</ul> -->

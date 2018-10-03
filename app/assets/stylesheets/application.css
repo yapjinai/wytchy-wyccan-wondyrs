@@ -48,11 +48,21 @@ h1,h2,h3,h4,h5,h6 {
   text-align: center;
 }
 
-.flash-notice {
-  background: green;
+.notifications {
+  height: 40px;
+  padding: 5px;
 }
-.flash-error {
-  background: red;
+
+  .flash-notice {
+    background: green;
+  }
+  .flash-error {
+    background: red;
+  }
+
+.breadcrumbs {
+  background: #ddd;
+  padding: 5px;
 }
 
 /* users show pages */

@@ -1,23 +1,24 @@
 class SessionsController < ApplicationController
   skip_before_action :find_user, only: [:new, :create]
+  before_action :disable_breadcrumbs, only: [:new]
 
   def new
   end
 
-  def create 
+  def create
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to @user 
-    else 
+      redirect_to home_path
+    else
       flash[:notice] = "Username or password not recognizd."
       redirect_to login_path
     end
-  end 
+  end
 
   def destroy
     session.delete(:user_id)
     redirect_to login_path
-  end 
+  end
 
 end

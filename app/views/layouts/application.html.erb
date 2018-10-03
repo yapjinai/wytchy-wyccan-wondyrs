@@ -36,12 +36,17 @@
     </header>
 
     <main>
-      <div class="flash-notice">
-        <%= flash[:notice] %>
+      <div class="notifications">
+        <div class="flash-notice">
+          <%= flash[:notice] %>
+        </div>
+        <div class="flash-error">
+          <%= flash[:error] %>
+        </div>
       </div>
-      <div class="flash-error">
-        <%= flash[:error] %>
-      </div>
+
+
+      <%= render "breadcrumbs" unless @disable_breadcrumbs %>
 
       <%= yield %>
     </main>

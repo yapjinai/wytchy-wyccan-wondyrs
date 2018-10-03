@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :find_user, only: [:login, :logout, :authenticate]
-
+  before_action :disable_breadcrumbs, only: [:new]
 
   def new
     @user = User.new

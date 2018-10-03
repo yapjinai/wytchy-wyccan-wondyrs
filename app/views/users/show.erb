@@ -1,32 +1,5 @@
 <h1>User page for <%= @user.username %>.</h1>
 
-<h3><%= @user.username %> has the following items:</h3>
-
-<ul>
-  <% @user.possessions.each do |p| %>
-  <li>
-    <div class="item-container">
-      <div class="item">
-        <%= link_to pluralize(p.quantity, p.item.name), p.item %>
-      </div>
-
-      <div class="item">
-        <% if p.quantity > 1 %>
-          <%= form_for(p, url: {controller: 'possessions', action: 'discard_one'}) do |f| %>
-            <%= f.hidden_field :id, value: p.id %>
-            <%= f.submit "Discard one" %>
-          <% end %>
-        <% end %>
-
-        <%= form_for(p, url: {controller: 'possessions', action: 'discard_all'}) do |f| %>
-          <%= f.hidden_field :id, value: p.id %>
-          <%= f.submit "Discard all" %>
-        <% end %>
-      </div>
-    </div>
-  </li>
-  <% end %>
-</ul>
 
 <h3><%= @user.username %> has cast the following spells:</h3>
 
