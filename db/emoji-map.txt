@@ -11,6 +11,7 @@
 📜: empty scroll
 👓: spectacles
 🕯: candle
+🍶: bottle
 📖: tome
 🌶: chili pepper
 🏹: bow & arrow
@@ -30,7 +31,9 @@
 🕷🕯: black candle
 🔏📖: ancient untranslated tome
 
-*broken arrow; Mends the relationship between two targets. = 🏹x1, 💄x3, 🕯x7
-*love; Causes first target to fall in love with second. = 👠x5, 💄x3, 🌶x1
+*broken arrow; Mends the relationship between two subjects. = 🏹x1, 💄x3, 🕯x7
+*love; Causes first subject to fall in love with second. = 👠x5, 💄x3, 🌶x1
 death; Causes a slow and painful death. Use with discretion. = 🏹x1, 💄x3, 🕯x7
-hex; Damn someone to three day's bad luck. = 🎭💍x1, 🌶x1, 🕯x2
+hex; Damn someone to three days' bad luck. = 🎭💍x1, 🌶x1, 🕯x2
+levitation; Cause something to rise. = 🕷x1
+*social lubricant; Alleviates awkwardness between two people. = 🍶x1

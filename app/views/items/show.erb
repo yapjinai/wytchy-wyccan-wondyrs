@@ -9,10 +9,3 @@
   </li>
   <% end %>
 </ul>
-
-<% if @logged_in_user %>
-  <%= form_for(@possession, url: {controller: 'possessions', action: 'create'}) do |f| %>
-    <%= f.hidden_field :item_id, value: @item.id %>
-    <%= f.submit "Purchase #{@item.name}" %>
-  <% end %>
-<% end %>

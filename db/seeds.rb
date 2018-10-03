@@ -1,3 +1,6 @@
+Spell.delete_all
+Item.delete_all
+
 def create_recipe(spell_hash)
   symbols = spell_hash[:recipe].keys
   symbols.each do |s|

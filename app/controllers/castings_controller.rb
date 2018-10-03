@@ -8,13 +8,18 @@ class CastingsController < ApplicationController
 
   def create
     spell_id = params[:casting][:spell_id].to_i
+    @subject_1 = params[:casting][:subject_1] || ""
+    @subject_2 = params[:casting][:subject_2] || ""
     @spell = Spell.find_by(id: spell_id)
-    if sufficient_items?(@logged_in_user, @spell)
-      cast_spell(@logged_in_user, @spell)
-      flash[:notice] = "#{@spell.name} cast."
-      redirect_to @logged_in_user
-    else
+    if !sufficient_items?
       flash[:error] = "Insufficient items for #{@spell.name}."
+      redirect_to @spell
+    elsif !sufficient_subjects?
+      flash[:error] = "Subject(s) required!"
+      redirect_to @spell
+    else
+      cast_spell
+      flash[:notice] = "#{@spell.name} cast."
       redirect_to @spell
     end
   end
@@ -36,10 +41,10 @@ class CastingsController < ApplicationController
   end
 
 # OTHER
-  def sufficient_items?(user, spell)
+  def sufficient_items?
     sufficient_flag = true
-    spell.recipes.each do |r|
-      possession = user.possessions.find_by(item: r.item)
+    @spell.recipes.each do |r|
+      possession = @logged_in_user.possessions.find_by(item: r.item)
       if !possession || possession.quantity < r.quantity
         sufficient_flag = false
       end
@@ -47,10 +52,15 @@ class CastingsController < ApplicationController
     sufficient_flag
   end
 
-  def cast_spell(user, spell)
+  def sufficient_subjects?
+
+    !@subject_1.empty? && !(@subject_2.empty? && @spell.binate)
+  end
+
+  def cast_spell
     #deplete inventory
-    spell.recipes.each do |r|
-      possession = user.possessions.find_by(item: r.item)
+    @spell.recipes.each do |r|
+      possession = @logged_in_user.possessions.find_by(item: r.item)
       possession.quantity -= r.quantity
       if possession.quantity == 0
         possession.destroy
@@ -58,7 +68,7 @@ class CastingsController < ApplicationController
       possession.save
     end
     #create casting
-    Casting.create(user: user, spell: spell)
+    Casting.create(user: @logged_in_user, spell: @spell)
   end
 
 end

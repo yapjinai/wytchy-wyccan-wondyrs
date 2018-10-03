@@ -6,7 +6,7 @@
 
 <% if @spell.binate %>
 <p>
-  This spell acts upon two targets.
+  This spell acts upon two subjects.
 </p>
 <% end %>
 
@@ -25,9 +25,9 @@
 <% if @logged_in_user %>
   <%= form_for(@casting, url: {controller: 'castings', action: 'create'}) do |f| %>
     <%= f.hidden_field :spell_id, value: @spell.id %>
-    Primary target: <%= f.text_field :subject_1 %><br>
+    Primary subject: <%= f.text_field :subject_1 %><br>
     <% if @spell.binate %>
-      Secondary target: <%= f.text_field :subject_2 %><br>
+      Secondary subject: <%= f.text_field :subject_2 %><br>
     <% end %>
     <%= f.submit "Cast", data: { confirm: "Are you sure? This action cannot be undone." } %>
   <% end %>
