@@ -1,5 +1,16 @@
 <h1>Purchase a new item</h1>
-<%= form_for(@possession, url: {action: 'create'}) do |f| %>
-  <%= f.select :item_id, @items_options %>
-  <%= f.submit "Purchase item" %>
+
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
 <% end %>
+
+<%= form_tag possessions_path do %>
+  <%= text_field_tag :symbol %>
+  <%= submit_tag "Purchase"%>
+<% end %>
+
+<p class="emoji" style="font-size:4em">
+  <% if flash[:symbol] %>
+    <%= flash[:symbol] %>
+  <% end %>
+</p>

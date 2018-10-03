@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :new, :create, :show, :edit, :update]
   resources :spells, only: [:index, :show]
   resources :items, only: [:index, :show]
-  resources :possessions, only: [:create]
+  resources :possessions, only: [:new, :create]
   resources :castings, only: [:create]
 
   root to: 'application#index'
