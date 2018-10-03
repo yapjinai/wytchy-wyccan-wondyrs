@@ -3,7 +3,11 @@
 </h2>
 
 <p>Gender: <%= @logged_in_user.gender %></p>
-<p>Birthday: <%= @logged_in_user.birthday.strftime("%B %d, %Y") %></p>
+<p>Birthday:
+  <% if @logged_in_user.birthday %>
+    <%= @logged_in_user.birthday.strftime("%B %d, %Y") %>
+  <% end %>
+</p>
 <p>Bloodtype: <%= @logged_in_user.bloodtype %></p>
 
 <%= button_to "Edit Profile", edit_user_path(@logged_in_user), method: :get %>

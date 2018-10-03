@@ -2,6 +2,7 @@
 body {
   background: url('bg-astrology.jpg');
   background-size: cover;
+  background-position: top center;
   font-family: cursive;
   font-size: large;
 }
