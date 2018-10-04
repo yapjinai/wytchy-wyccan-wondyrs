@@ -8,9 +8,9 @@
     <% @user.castings.each do |c| %>
     <li>
       <%= link_to c.spell.name, c.spell %>
-      upon <%= c.subject_1 %>
+      upon ***
       <% if !c.subject_2.empty? %>
-        and <%= c.subject_2 %>
+        and ***
       <% end %>
       on <%= c.created_at.strftime("%B %d, %Y") %>
     </li>

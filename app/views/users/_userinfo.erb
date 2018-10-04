@@ -22,7 +22,8 @@
         <% end %>
       </ul>
     <% end %>
-    You have <%= @logged_in_user.tokens %> tokens.
+    <br>
+    You have <%= pluralize(@logged_in_user.tokens, "token") %>.
   </div>
 </div>
 

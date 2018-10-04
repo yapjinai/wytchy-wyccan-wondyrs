@@ -1,5 +1,8 @@
 Spell.delete_all
+Casting.delete_all
 Item.delete_all
+Possession.delete_all
+Recipe.delete_all
 
 def create_recipe(spell_hash)
   symbols = spell_hash[:recipe].keys
@@ -59,11 +62,12 @@ def parse_item(line)
   item = {}
   item[:emoji] = line.split(':')[0].strip
   item[:title] = line.split(':')[1].strip.titleize
+  item[:price] = line.split(':')[2].strip.to_i
   item
 end
 
 def create_item(item)
-  Item.create(name: item[:title], symbol: item[:emoji])
+  Item.create(name: item[:title], symbol: item[:emoji], price: item[:price])
 end
 
 spells_delim = false

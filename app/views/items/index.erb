@@ -2,25 +2,40 @@
 
 
 <% if @logged_in_user %>
-  <h1>Purchase a new item</h1>
-  
-  <%= form_tag possessions_path do %>
-    <%= text_field_tag :symbol %>
-    <%= submit_tag "Purchase"%>
-  <% end %>
+  <h1>Summon a new item</h1>
+
+  <div class="flex-horizontal">
+    <%= form_tag possessions_path do %>
+      <div class="flex-child">
+        <%= text_field_tag :symbol %>
+      </div>
+      <div class="flex-child">
+        <%= submit_tag "Summon"%>
+      </div>
+    <% end %>
+  </div>
+
 <% end %>
 
+<div>
   <p class="emoji" style="font-size:4em">
     <% if flash[:symbol] %>
       <%= flash[:symbol] %>
     <% end %>
   </p>
-
+</div>
 
 <ul>
   <% @items.each do |i| %>
     <li>
-      <%= link_to i.name, i %>
+      <div class="flex-horizontal">
+        <div class="flex-child">
+          <%= link_to i.name, i %>
+        </div>
+        <div class="flex-child">
+          <%= button_to pluralize(i.price, "tokens"), purchase_path, params: {item_id: i.id} %>
+        </div>
+      </div>
     </li>
   <% end %>
 </ul>

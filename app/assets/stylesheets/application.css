@@ -104,21 +104,9 @@ h1,h2,h3,h4,h5,h6 {
 
 
 
-/* flex */
 
 ul {
   list-style-type: none;
-}
-
-.flex-horizontal {
-  width: 80%;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-}
-
-.flex-child {
-  display: inline-flex;
 }
 
 /* popup sidebar menu */
@@ -129,11 +117,37 @@ ul {
   position: fixed;
   width: 20%;
   background: url('bg-paper.jpg')
-
-
 }
 
 #menu-button:hover #menu {
   display: inline;
   /* To do: use media queries to make this not hideous when screen is small */
+}
+
+.emoji {
+  text-align: center;
+  padding-top: 10px;
+}
+
+
+
+
+
+
+
+/* flex */
+
+.flex-horizontal {
+  max-width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+
+  /* border: 2px solid red; */
+}
+
+.flex-child {
+  display: inline-flex;
+
+  /* border: 2px solid blue; */
 }

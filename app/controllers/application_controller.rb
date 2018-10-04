@@ -10,6 +10,13 @@ class ApplicationController < ActionController::Base
   end
 
   private
+  def pluralize(number, text)
+    if number != 1
+      "#{number} #{text.pluralize}"
+    else
+      "#{number} #{text}"
+    end
+  end
 
   def find_user
     if session[:user_id]

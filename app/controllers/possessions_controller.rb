@@ -6,25 +6,11 @@ class PossessionsController < ApplicationController
     end
 
     def create
-      # byebug
-      # item_id = params[:possession][:item_id].to_i
-      # @item = Item.find_by(id: item_id)
-      #
-      # @possession = Possession.find_or_create_by(item_id: item_id, user_id: @logged_in_user.id)
-      #
-      # quantity = @possession.quantity
-      # quantity ||= 0
-      # quantity += 1
-      # @possession.update(quantity: quantity)
-      #
-      # flash[:notice] = "#{@item.name} purchased."
-      # redirect_to @item
-
       symbol = params[:symbol].strip
-      item = Item.find_by(symbol: symbol)
-      if item == nil
+      @item = Item.find_by(symbol: symbol)
+      if @item == nil
         if symbol.empty?
-          flash[:notice] = "Please enter a glyph to purchase an item."
+          flash[:notice] = "Please enter a glyph to summon an item."
         else
           @logged_in_user.tokens += 1
           @logged_in_user.save
@@ -32,14 +18,22 @@ class PossessionsController < ApplicationController
           flash[:symbol] = "✴️"
         end
       else
-        @possession = Possession.find_or_create_by(item: item, user: @logged_in_user)
-        if @possession.quantity == nil
-          @possession.update(quantity: 1)
-        else
-          @possession.update(quantity: @possession.quantity + 1)
-        end
-        flash[:notice] = "#{item.name} purchased."
-        flash[:symbol] = item.symbol
+        add_to_possession
+        flash[:notice] = "#{@item.name} summoned."
+        flash[:symbol] = @item.symbol
+      end
+      redirect_to items_path
+    end
+
+    def purchase
+      @item = Item.find_by(id: params[:item_id])
+      if @item.price > @logged_in_user.tokens
+        flash[:error] = "Not enough tokens!"
+      else
+        add_to_possession
+        @logged_in_user.tokens -= @item.price
+        @logged_in_user.save
+        flash[:notice] = "#{@item.name} purchased. You now have #{pluralize(@logged_in_user.tokens, "token")}."
       end
       redirect_to items_path
     end
@@ -73,4 +67,12 @@ class PossessionsController < ApplicationController
       redirect_to home_path
     end
 
+    def add_to_possession
+      @possession = Possession.find_or_create_by(item: @item, user: @logged_in_user)
+      if @possession.quantity == nil
+        @possession.update(quantity: 1)
+      else
+        @possession.update(quantity: @possession.quantity + 1)
+      end
+    end
 end

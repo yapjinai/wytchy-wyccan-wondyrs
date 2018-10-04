@@ -9,3 +9,8 @@
   </li>
   <% end %>
 </ul>
+
+<h3>
+  <%= @item.name %> costs <%= pluralize(@item.price, "token") %>. <%= button_to "Purchase?", purchase_path, params: {item_id: @item.id} %>
+
+</h3>
