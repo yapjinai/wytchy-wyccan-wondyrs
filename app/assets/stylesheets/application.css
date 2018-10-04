@@ -85,7 +85,7 @@ main {
   }
 
 .breadcrumbs {
-  background: url('bg-scroll.jpg');
+  background: url('bg-scroll2.jpg');
   background-size: cover;
   background-position: center;
   margin: 25px;
@@ -94,8 +94,8 @@ main {
 }
 
 .content {
-  background: url('bg-scroll.jpg');
-  background-size: contain;
+  background: url('bg-scroll2.jpg');
+  background-size: cover;
   margin: 25px;
   padding: 25px;
 }
@@ -103,6 +103,7 @@ main {
 h1,h2,h3,h4,h5,h6 {
   text-align: center;
   font-family: cursive;
+  color: white;
   /* font-size: 200%; */
 }
 
@@ -117,7 +118,7 @@ ul {
   padding: 20px;
   position: fixed;
   width: 10%;
-  background: url('bg-scroll.jpg');
+  background: url('bg-scroll2.jpg');
   border: #ccc 10px double;
 }
 
