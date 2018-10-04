@@ -22,20 +22,6 @@
         <div class="flex-child">
           <%= link_to pluralize(p.quantity, p.item.name), p.item %>
         </div>
-<!--
-        <div class="flex-child">
-          <% if p.quantity > 1 %>
-            <%= form_for(p, url: {controller: 'possessions', action: 'discard_one'}) do |f| %>
-              <%= f.hidden_field :id, value: p.id %>
-              <%= f.submit "Discard one" %>
-            <% end %>
-          <% end %>
-
-          <%= form_for(p, url: {controller: 'possessions', action: 'discard_all'}) do |f| %>
-            <%= f.hidden_field :id, value: p.id %>
-            <%= f.submit "Discard all" %>
-          <% end %>
-        </div> -->
       </div>
     </li>
     <% end %>
@@ -45,12 +31,12 @@
 <p><%= button_to "Purchase items", items_path, method: :get %></p>
 
 
-<% if @logged_in_user.castings.empty? %>
-  <h3>You have not cast any spells!</h3>
+<% if @current_spells.empty? %>
+  <h3>You are not casting any spells.</h3>
 <% else %>
-  <h3>You have cast the following spells:</h3>
+  <h3>You are casting...</h3>
   <ul>
-    <% @logged_in_user.castings.each do |c| %>
+    <% @current_spells.each do |c| %>
     <li>
       <%= link_to c.spell.name, c.spell %>
       upon <%= c.subject_1 %>
@@ -64,6 +50,29 @@
 <% end %>
 <p><%= button_to "Cast a spell", spells_path, method: :get %></p>
 
+<% if @old_spells.empty? %>
+  <% if @current_spells.empty? %>
+    <h3>You haven't cast any old spells, either.</h3>
+  <% else %>
+    <h3>You'll have old spells as soon as those finish.</h3>
+  <% end %>
+<% else %>
+  <h3>Your old spells were...</h3>
+  <ul>
+    <% @old_spells.each do |c| %>
+      <li>
+        <%= link_to c.spell.name, c.spell %>
+        upon <%= c.subject_1 %>
+        <% if !c.subject_2.empty? %>
+          and <%= c.subject_2 %>
+        <% end %>
+        on <%= c.created_at.strftime("%B %d, %Y") %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
 <p>
-  <%= button_to "Delete account", @logged_in_user, method: :delete, data: {confirm: 'Are you sure?'} %>
+  <%= button_to "Delete account?", @logged_in_user, method: :delete, data: {confirm: 'Are you sure?'} %>
+  Warning: This action CANNOT BE UNDONE!
 </p>
