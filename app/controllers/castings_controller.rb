@@ -60,7 +60,13 @@ class CastingsController < ApplicationController
   def cast_spell
     now = Time.now
     #create casting
-    Casting.create(user: @logged_in_user, spell_id: @spell.id, finished_at: now.advance(seconds: @spell.duration))
+    casting = Casting.create(
+      user: @logged_in_user,
+      spell_id: @spell.id,
+      subject_1: @subject_1,
+      subject_2: @subject_2,
+      finished_at: now.advance(seconds: @spell.duration)
+    )
 
     #deplete inventory
     @spell.recipes.each do |r|

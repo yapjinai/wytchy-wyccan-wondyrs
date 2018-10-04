@@ -125,8 +125,7 @@ ul {
 #menu {
   display: none;
 
-  /* margin: 20px 0; */
-  padding: 5px;
+  padding: 20px;
   position: fixed;
   width: 20%;
   background: url('bg-paper.jpg')
