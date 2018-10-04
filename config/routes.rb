@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :new, :create, :show, :edit, :update]
   resources :spells, only: [:index, :show]
   resources :items, only: [:index, :show]
-  resources :possessions, only: [:new, :create]
+  resources :possessions, only: [:create]
   resources :castings, only: [:create]
 
   root to: 'application#index'
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   post "/sessions", to: "sessions#create", as: "sessions"
   delete "/sessions", to: "sessions#destroy", as: "logout"
 
-  get '/buyitem', to: 'possessions#new'
+  # get '/buyitem', to: 'possessions#new'
   patch '/discard_one', to: 'possessions#discard_one'
   patch '/discard_all', to: 'possessions#discard_all'
 

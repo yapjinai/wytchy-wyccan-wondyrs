@@ -86,7 +86,7 @@ main {
 
 .content {
   background: url('bg-paper.jpg');
-  background-size: cover;
+  background-size: contain;
   margin: 25px;
   padding: 25px;
 }

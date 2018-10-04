@@ -35,7 +35,7 @@ class PossessionsController < ApplicationController
         flash[:notice] = "#{item.name} purchased."
         flash[:symbol] = item.symbol
       end
-      redirect_to new_possession_path
+      redirect_to items_path
     end
 
   # READ

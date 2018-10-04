@@ -1,15 +1,30 @@
 <h1>All items</h1>
 
-<ul>
-
-<% @items.each do |i| %>
-  <li>
-    <%= link_to i.name, i %>
-  </li>
-<% end %>
-
-</ul>
 
 <% if @logged_in_user %>
-  <%= button_to "Purchase items", buyitem_path, method: :get %>
+  <h1>Purchase a new item</h1>
+
+  <% if flash[:notice] %>
+    <p><%= flash[:notice] %></p>
+  <% end %>
+
+  <%= form_tag possessions_path do %>
+    <%= text_field_tag :symbol %>
+    <%= submit_tag "Purchase"%>
+  <% end %>
 <% end %>
+
+  <p class="emoji" style="font-size:4em">
+    <% if flash[:symbol] %>
+      <%= flash[:symbol] %>
+    <% end %>
+  </p>
+
+
+<ul>
+  <% @items.each do |i| %>
+    <li>
+      <%= link_to i.name, i %>
+    </li>
+  <% end %>
+</ul>
