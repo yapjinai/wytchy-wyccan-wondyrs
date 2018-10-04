@@ -44,15 +44,17 @@
 <% end %>
 <p><%= button_to "Purchase items", buyitem_path, method: :get %></p>
 
-<!--
 <h3>
   Active Spells
 </h3>
+<% if @logged_in_user.castings.empty? %>
+  <p>You have no active spells!</p>
+<% else %>
 <ul>
+  <% @logged_in_user.castings.each do |c| %>
   <li>
-    Placeholder
+    <p><%= c.spell.name %> will finish at <%= c.finished_at %>.</p>
   </li>
-  <li>
-    Placeholder
-  </li>
-</ul> -->
+  <% end %>
+</ul>
+<% end %>

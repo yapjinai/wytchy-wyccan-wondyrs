@@ -24,7 +24,7 @@ header {
 
 nav {
   /* background: hotpink; */
-  background: url('bg-grass.jpeg');
+  background: url('bg-paper.jpeg');
   background-size: cover;
   background-position: bottom;
   padding: 5px;
@@ -67,14 +67,15 @@ main {
   padding: 25px;
 }
 
-  .flash-notice {
-    background: green;
-    padding: 5px;
-  }
-  .flash-error {
-    background: red;
-    padding: 5px;
-  }
+.flash-notice {
+  background: green;
+  padding: 5px;
+}
+
+.flash-error {
+  background: red;
+  padding: 5px;
+}
 
 .breadcrumbs {
   /* background: #ddd; */
@@ -87,7 +88,7 @@ main {
 }
 
 .content {
-  background: url('bg-grass.jpg');
+  background: url('bg-scroll.jpg');
   background-size: cover;
   margin: 25px;
   padding: 25px;
