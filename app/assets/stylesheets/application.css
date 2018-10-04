@@ -1,7 +1,3 @@
-div {
-  border: 1px solid rgba(0,0,256,0);
-}
-
 body {
   background: url('bg-astrology.jpg');
   background-size: cover;
@@ -15,54 +11,19 @@ a {
   color: hotpink;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 /* nav layout styling */
 
 header {
   font-size: 20px;
-    /* padding-top: 5px; */
 }
 
-  header a {
-    color: white;
-  }
-
-  header a:hover {
-    color: lightpink;
-  }
-
-nav {
-  /* background: hotpink; */
-  background: url('bg-grass.jpeg');
-  background-size: cover;
-  background-position: bottom;
-  padding: 5px;
-
-  display: flex;
-  justify-content: space-evenly;
-}
-
-  nav .nav-child {
-  }
-
-/* .user-nav {
-  background: #333333;
-  padding: 10px;
-
-  display: flex;
-  justify-content: space-between;
-
-}
-
-.user-nav div {
-  font-family: sans-serif;
-  display: inline;
+p, li, label {
   color: white;
 }
-
-.user-nav div form {
-  float: right;
-} */
-
 
 main {
   margin: auto;
@@ -73,31 +34,31 @@ main {
 .notifications {
   height: 60px;
   padding: 25px;
-
 }
 
-  .flash-spell {
-    background: url('bg-glitter.webp');
-    padding: 5px;
-    font-size: xx-large;
-    color: white;
-  }
-  .flash-notice {
-    background: limegreen;
-    padding: 5px;
-    font-size: xx-large;
-  }
-  .flash-error {
-    background: red;
-    padding: 5px;
-    font-size: xx-large;
-  }
+.flash-spell {
+  background: url('bg-glitter.webp');
+  padding: 5px;
+  font-size: xx-large;
+  color: white;
+}
+
+.flash-notice {
+  background: limegreen;
+  padding: 5px;
+  font-size: xx-large;
+}
+
+.flash-error {
+  background: red;
+  padding: 5px;
+  font-size: xx-large;
+}
 
 .breadcrumbs {
   background: url('bg-scroll2.jpg');
   background-size: cover;
   background-position: center;
-  margin: 25px;
   padding: 25px;
   font-size: xx-large;
 }
@@ -113,22 +74,18 @@ h1,h2,h3,h4,h5,h6 {
   text-align: center;
   font-family: cursive;
   color: white;
-  /* font-size: 200%; */
 }
 
 ul {
   list-style-type: none;
 }
 
-/* popup sidebar menu */
+/* sidebar menu */
 #menu {
-  /* display: none; */
-
   padding: 20px;
   position: fixed;
   width: 10%;
   background: url('bg-scroll2.jpg');
-  border: #ccc 10px double;
 }
 
 #menu-button:hover #menu {
@@ -148,14 +105,11 @@ ul {
   margin: auto;
   display: flex;
   justify-content: space-between;
-
-  /* border: 2px solid red; */
 }
 
 .flex-child {
   display: inline-flex;
-
-  /* border: 2px solid blue; */
+  color: white;
 }
 
 input[type=submit] {
@@ -166,7 +120,7 @@ input[type=submit] {
 hr {
     border: none;
     border-top: 3px solid plum;
-    /* border-top: 3px double #333; */
+    border-top: 3px double #fff;
     color: #333;
     overflow: visible;
     text-align: center;
@@ -174,9 +128,18 @@ hr {
 }
 
 hr:after {
-    /* background: #fff; */
-    content: '🔮';
+    content: '◆';
     padding: 0 4px;
     position: relative;
-    top: -13px;
+    top: -16px;
+    color: #fff
+}
+
+
+.bordered-div {
+  border: 10px white double;
+}
+
+.subject-title {
+  color: white;
 }

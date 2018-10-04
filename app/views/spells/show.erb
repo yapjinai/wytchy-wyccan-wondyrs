@@ -27,13 +27,13 @@
     <%= f.hidden_field :spell_id, value: @spell.id %>
 
     <div class="flex-horizontal">
-      <div>Primary subject:</div>
+      <div class="subject-title">Primary subject:</div>
       <div><%= f.text_field :subject_1 %></div>
     </div>
 
     <div class="flex-horizontal">
       <% if @spell.binate %>
-        <div>Secondary subject:</div>
+        <div class="subject-title">Secondary subject:</div>
         <div><%= f.text_field :subject_2 %><br></div>
       <% end %>
     </div>
