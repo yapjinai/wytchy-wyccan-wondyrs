@@ -20,7 +20,7 @@ class CastingsController < ApplicationController
       redirect_to @spell
     else
       cast_spell
-      flash[:notice] = "#{@spell.name} cast."
+      flash[:spell] = "#{@spell.name} cast."
       redirect_to @spell
     end
   end

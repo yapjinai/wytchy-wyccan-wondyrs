@@ -39,6 +39,11 @@
 
     <main>
       <div class="notifications">
+        <% if flash[:spell] %>
+          <div class="flash-spell">
+            <%= flash[:spell] %>
+          </div>
+        <% end %>
         <% if flash[:notice] %>
           <div class="flash-notice">
             <%= flash[:notice] %>
@@ -58,6 +63,5 @@
         <%= yield %>
       </div>
     </main>
-
   </body>
 </html>
