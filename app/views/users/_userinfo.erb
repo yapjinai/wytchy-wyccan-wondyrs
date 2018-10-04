@@ -1,2 +1,28 @@
-<div><%= link_to "🔮 #{@logged_in_user.username}", home_path %></div>
+<div id="menu-button">
+  <div>
+    <%= link_to "🔮 #{@logged_in_user.username}", home_path %>
+  </div>
+
+  <div id="menu">
+    <h3>Inventory</h3>
+
+    <% if @logged_in_user.possessions.empty? %>
+      You have no items in your inventory!
+    <% else %>
+      You have the following items:
+      <ul>
+        <% @logged_in_user.possessions.each do |p| %>
+        <li>
+          <div class="flex-horizontal">
+            <div class="flex-child">
+              <%= link_to pluralize(p.quantity, p.item.name), p.item %>
+            </div>
+          </div>
+        </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>
+
 <div><%= button_to "Logout", logout_path, method: :delete, class: 'secondary' %></div>
