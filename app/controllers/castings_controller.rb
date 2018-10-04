@@ -49,7 +49,6 @@ class CastingsController < ApplicationController
   end
 
   def cast_spell(user, spell)
-    #deplete inventory
     spell.recipes.each do |r|
       possession = user.possessions.find_by(item: r.item)
       possession.quantity -= r.quantity
@@ -58,9 +57,7 @@ class CastingsController < ApplicationController
       end
       possession.save
     end
-    #create casting
     now = Time.now
-    byebug
     Casting.create(user: user, spell: spell, finished_at: now.advance(seconds: spell.duration))
   end
 
