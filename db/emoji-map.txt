@@ -17,7 +17,6 @@
 🏹: bow & arrow
 🦊💀: fox skull
 🐈💀: cat skull
-🕷💀: spider skull
 🦊☠️: fox corpse
 🐈☠️: cat corpse
 🕷☠️: spider corpse
@@ -32,9 +31,10 @@
 🔏📖: ancient untranslated tome
 
 *broken arrow; 10; Mends the relationship between two subjects. = 🏹x1, 💄x3, 🕯x7
-*love; 10; Causes first subject to fall in love with second. = 👠x5, 💄x3, 🌶x1
-death; 10; Causes a slow and painful death. Use with discretion. = 🏹x1, 💄x3, 🕯x7
-hex; 10; Damn someone to three days' bad luck. = 🎭💍x1, 🌶x1, 🕯x2
-levitation; 10; Cause something to rise. = 🕷x1
-burn candle; 30; A ritual candle burning to warm the soul and bring the self closer to nature. = 🕯x1
-*social lubricant; 10; Alleviates awkwardness between two people. = 🍶x1
+*swooning star; 10; Your first subject will become infatuated with the second. = 👠x5, 💄x3, 🌶x1
+creeping mortis; 10; Causes a slow and painful death. Use with discretion. = 🏹x1, 💄x3, 🕯x7, 🗝📜x1
+pale hex; 10; Damn someone to three days' bad luck. = 🎭💍x1, 🌶x1, 🕯x2
+dark hex; 10; A person is damned to a week of bad luck, and increased odds of injury. = 🎭💍x2, 🐈x2, 🕯x2
+burning hex; 10; If the subject is a witch, they'll touch a cauldron while hot. If not, they suffer an increased chance of resting a hand on a stovetop while making an otherwise perfect dinner. = 🍄x1, 🎭💍x2, 🌶x2, 🕯x2
+levitation; 10; Momentarily raise an object or person; works best when the subject isn't in sight. = 🕷x1
+burn candle; 30; A ritual burning to warm the soul and draw the spirit closer to magic. = 🕯x1
