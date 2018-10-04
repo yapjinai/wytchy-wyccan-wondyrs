@@ -58,6 +58,10 @@ class CastingsController < ApplicationController
   end
 
   def cast_spell
+    now = Time.now
+    #create casting
+    Casting.create(user: @logged_in_user, spell_id: @spell.id, finished_at: now.advance(seconds: @spell.duration))
+
     #deplete inventory
     @spell.recipes.each do |r|
       possession = @logged_in_user.possessions.find_by(item: r.item)
@@ -67,8 +71,6 @@ class CastingsController < ApplicationController
       end
       possession.save
     end
-    now = Time.now
-    Casting.create(user: @logged_in_user, spell: @spell, finished_at: now.advance(seconds: spell.duration))
   end
 
 end

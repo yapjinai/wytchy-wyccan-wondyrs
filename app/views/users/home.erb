@@ -3,11 +3,10 @@
 </h2>
 
 <p>Gender: <%= @logged_in_user.gender %></p>
-<p>Birthday:
-  <% if @logged_in_user.birthday %>
-    <%= @logged_in_user.birthday.strftime("%B %d, %Y") %>
-  <% end %>
-</p>
+<% if @logged_in_user.birthday %>
+<p>Birthday: <%= @logged_in_user.birthday.strftime("%B %d, %Y") %></p>
+<p>Sign: <%= @logged_in_user.birthday.zodiac_sign %></p>
+<% end %>
 <p>Bloodtype: <%= @logged_in_user.bloodtype %></p>
 
 <%= button_to "Edit Profile", edit_user_path(@logged_in_user), method: :get %>
@@ -19,12 +18,12 @@
   <ul>
     <% @logged_in_user.possessions.each do |p| %>
     <li>
-      <div class="item-container">
-        <div class="item">
+      <div class="flex-horizontal">
+        <div class="flex-child">
           <%= link_to pluralize(p.quantity, p.item.name), p.item %>
         </div>
 
-        <div class="item">
+        <div class="flex-child">
           <% if p.quantity > 1 %>
             <%= form_for(p, url: {controller: 'possessions', action: 'discard_one'}) do |f| %>
               <%= f.hidden_field :id, value: p.id %>
@@ -44,15 +43,16 @@
 <% end %>
 <p><%= button_to "Purchase items", buyitem_path, method: :get %></p>
 
-<!--
-<h3>
-  Active Spells
-</h3>
-<ul>
-  <li>
-    Placeholder
-  </li>
-  <li>
-    Placeholder
-  </li>
-</ul> -->
+
+<% if @logged_in_user.castings.empty? %>
+  <h3>You have not cast any spells!</h3>
+<% else %>
+  <h3>You have cast the following spells:</h3>
+  <ul>
+    <% @logged_in_user.castings.each do |c| %>
+    <li>
+      <%= link_to c.spell.name, c.spell %> on <%= c.created_at.strftime("%B %d, %Y") %>
+    </li>
+    <% end %>
+  </ul>
+<% end %>

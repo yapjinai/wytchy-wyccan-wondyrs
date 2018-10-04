@@ -1,2 +1,2 @@
-<div><%= link_to "🔮 #{@logged_in_user.username}", @logged_in_user %></div>
+<div><%= link_to "🔮 #{@logged_in_user.username}", home_path %></div>
 <div><%= button_to "Logout", logout_path, method: :delete, class: 'secondary' %></div>

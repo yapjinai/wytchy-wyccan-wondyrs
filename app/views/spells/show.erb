@@ -25,10 +25,19 @@
 <% if @logged_in_user %>
   <%= form_for(@casting, url: {controller: 'castings', action: 'create'}) do |f| %>
     <%= f.hidden_field :spell_id, value: @spell.id %>
-    Primary subject: <%= f.text_field :subject_1 %><br>
-    <% if @spell.binate %>
-      Secondary subject: <%= f.text_field :subject_2 %><br>
-    <% end %>
+
+    <div class="flex-horizontal">
+      <div>Primary subject:</div>
+      <div><%= f.text_field :subject_1 %></div>
+    </div>
+
+    <div class="flex-horizontal">
+      <% if @spell.binate %>
+        <div>Secondary subject:</div>
+        <div><%= f.text_field :subject_2 %><br></div>
+      <% end %>
+    </div>
+
     <%= f.submit "Cast", data: { confirm: "Are you sure? This action cannot be undone." } %>
   <% end %>
 <% end %>
