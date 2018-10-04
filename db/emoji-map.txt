@@ -30,7 +30,8 @@
 🕷🕯: black candle
 🔏📖: ancient untranslated tome
 
-*broken arrow; Mends the relationship between two targets. = 🏹x1, 💄x3, 🕯x7
-*love; Causes first target to fall in love with second. = 👠x5, 💄x3, 🌶x1
-death; Causes a slow and painful death. Use with discretion. = 🏹x1, 💄x3, 🕯x7
-hex; Damn someone to three day's bad luck. = 🎭💍x1, 🌶x1, 🕯x2
+*broken arrow; 10; Mends the relationship between two targets. = 🏹x1, 💄x3, 🕯x7
+*love; 10; Causes first target to fall in love with second. = 👠x5, 💄x3, 🌶x1
+death; 10; Causes a slow and painful death. Use with discretion. = 🏹x1, 💄x3, 🕯x7
+hex; 10; Damn someone to three day's bad luck. = 🎭💍x1, 🌶x1, 🕯x2
+burn candle; 30; A ritual candle burning to warm the soul and bring the self closer to nature. = 🕯x1

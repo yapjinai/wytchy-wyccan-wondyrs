@@ -15,6 +15,7 @@ class CastingsController < ApplicationController
       redirect_to @logged_in_user
     else
       flash[:error] = "Insufficient items for #{@spell.name}."
+      # maybe direct to home instead?
       redirect_to @spell
     end
   end
@@ -58,7 +59,9 @@ class CastingsController < ApplicationController
       possession.save
     end
     #create casting
-    Casting.create(user: user, spell: spell)
+    now = Time.now
+    byebug
+    Casting.create(user: user, spell: spell, finished_at: now.advance(seconds: spell.duration))
   end
 
 end
