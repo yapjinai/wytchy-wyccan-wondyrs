@@ -4,6 +4,7 @@ body {
   background-position: top center;
   font-family: cursive;
   font-size: large;
+  padding: 50px;
 }
 
 a {
@@ -31,29 +32,36 @@ main {
   max-width: 600px;
 }
 
+/* notifications */
+
 .notifications {
-  height: 60px;
-  padding: 25px;
+  padding: 20px;
+  position: fixed;
+  right: 0;
+  width: 10%;
+  /* background: url('bg-scroll2.jpg'); */
 }
 
-.flash-spell {
-  background: url('bg-glitter.webp');
-  padding: 5px;
-  font-size: xx-large;
-  color: white;
-}
+  .flash-spell {
+    background: url('bg-glitter.webp');
+    padding: 5px;
+    font-size: xx-large;
+    color: white;
+  }
 
-.flash-notice {
-  background: limegreen;
-  padding: 5px;
-  font-size: xx-large;
-}
+  .flash-notice {
+    background: limegreen;
+    padding: 5px;
+    font-size: xx-large;
+  }
 
-.flash-error {
-  background: red;
-  padding: 5px;
-  font-size: xx-large;
-}
+  .flash-error {
+    background: red;
+    padding: 5px;
+    font-size: xx-large;
+  }
+
+/* breadcrumbs */
 
 .breadcrumbs {
   background: url('bg-scroll2.jpg');
@@ -61,12 +69,14 @@ main {
   background-position: center;
   padding: 25px;
   font-size: xx-large;
+  color: white;
 }
+
+/* content */
 
 .content {
   background: url('bg-scroll2.jpg');
   background-size: cover;
-  margin: 25px;
   padding: 25px;
 }
 
@@ -119,8 +129,7 @@ input[type=submit] {
 
 hr {
     border: none;
-    border-top: 3px solid plum;
-    border-top: 3px double #fff;
+    border-top: 3px double plum;
     color: #333;
     overflow: visible;
     text-align: center;
@@ -128,7 +137,7 @@ hr {
 }
 
 hr:after {
-    content: '◆';
+    content: '🔮';
     padding: 0 4px;
     position: relative;
     top: -16px;
@@ -137,7 +146,9 @@ hr:after {
 
 
 .bordered-div {
-  border: 10px white double;
+  border: 10px gold double;
+  margin: 25px;
+
 }
 
 .subject-title {

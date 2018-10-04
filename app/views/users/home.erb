@@ -63,3 +63,7 @@
   </ul>
 <% end %>
 <p><%= button_to "Cast a spell", spells_path, method: :get %></p>
+
+<p>
+  <%= button_to "Delete account", @logged_in_user, method: :delete, data: {confirm: 'Are you sure?'} %>
+</p>

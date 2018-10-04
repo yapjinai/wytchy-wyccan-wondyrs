@@ -20,7 +20,7 @@
 
     <main>
       <% if flash[:notice] || flash[:error] || flash[:spell] %>
-        <div class="notifications bordered-div">
+        <div class="notifications">
           <% if flash[:spell] %>
             <div class="flash-spell">
               <%= flash[:spell] %>
@@ -39,12 +39,16 @@
         </div>
       <% end %>
 
-      <div class="bordered-div">
-        <%= render "breadcrumbs" unless @disable_breadcrumbs %>
-      </div>
+      <% if !@disable_breadcrumbs %>
+        <div class="bordered-div">
+          <%= render "breadcrumbs" %>
+        </div>
+      <% end %>
 
-      <div class="content bordered-div">
-        <%= yield %>
+      <div class="bordered-div">
+        <div class="content">
+          <%= yield %>
+        </div>
       </div>
     </main>
   </body>

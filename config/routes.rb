@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users, only: [:index, :new, :create, :show, :edit, :update]
+  resources :users
   resources :spells, only: [:index, :show]
   resources :items, only: [:index, :show]
   resources :possessions, only: [:create]

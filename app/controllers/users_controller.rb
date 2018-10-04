@@ -35,7 +35,9 @@ class UsersController < ApplicationController
   end
 
   def destroy
-
+    @logged_in_user.destroy
+    session.delete(:user_id)
+    redirect_home
   end
 
 # OTHER

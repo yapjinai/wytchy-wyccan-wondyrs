@@ -10,7 +10,16 @@
   <% end %>
 </ul>
 
-<h3>
-  <%= @item.name %> costs <%= pluralize(@item.price, "token") %>. <%= button_to "Purchase?", purchase_path, params: {item_id: @item.id} %>
 
+<h3>
+  <%= @item.name %> costs <%= pluralize(@item.price, "token") %>.
 </h3>
+
+
+<% if @logged_in_user.items.include?(@item) %>
+  <p>
+    You have <%= pluralize(@logged_in_user.possessions.find_by(item: @item).quantity, @item.name) %>.
+  </p>
+<% end %>
+
+<%= button_to "Purchase?", purchase_path, params: {item_id: @item.id} %>
