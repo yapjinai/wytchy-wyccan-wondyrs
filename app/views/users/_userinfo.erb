@@ -1,30 +1,31 @@
-<div id="menu-button">
-  <div>
-    <%= link_to "🔮 #{@logged_in_user.username}", home_path %>
-  </div>
-
-  <div id="menu">
-    <h3>Inventory</h3>
-
-    <% if @logged_in_user.possessions.empty? %>
-      You have no items in your inventory!
-    <% else %>
-      You have the following items:
-      <ul>
-        <% @logged_in_user.possessions.each do |p| %>
-        <li>
-          <div class="flex-horizontal">
-            <div class="flex-child">
-              <%= link_to pluralize(p.quantity, p.item.name), p.item %>
-            </div>
+<div id="menu">
+  <p><%= link_to "🔮 #{@logged_in_user.username}", home_path %></p>
+  <p>✴️<%= @logged_in_user.tokens %> tokens</p>
+  <%= button_to "Logout", logout_path, method: :delete %>
+  <hr>
+  <h3>Links</h3>
+  <p><%= link_to "Home", '/' %>
+  <p><%= link_to "All users", users_path %></p>
+  <p><%= link_to "All spells", spells_path %></p>
+  <p><%= link_to "All items", items_path %></p>
+  <hr>
+  <!-- <h3>Inventory</h3>
+  <% if @logged_in_user.possessions.empty? %>
+    You have no items in your inventory!
+  <% else %>
+    You have the following items:
+    <ul>
+      <% @logged_in_user.possessions.each do |p| %>
+      <li>
+        <div class="flex-horizontal">
+          <div class="flex-child">
+            <%= link_to pluralize(p.quantity, p.item.name), p.item %>
           </div>
-        </li>
-        <% end %>
-      </ul>
-    <% end %>
-    <br>
-    You have <%= pluralize(@logged_in_user.tokens, "token") %>.
-  </div>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  <% end %>
+  <br> -->
+  <!-- You have <%= pluralize(@logged_in_user.tokens, "token") %>. -->
 </div>
-
-<div><%= button_to "Logout", logout_path, method: :delete, class: 'secondary' %></div>

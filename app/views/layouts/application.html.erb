@@ -14,42 +14,27 @@
   </head>
 
   <body>
-    <header>
-      <nav>
-        <div class="nav-child">
-          <%= link_to "Home", '/' %>
-        </div>
-        <div class="nav-child">
-          <%= link_to "All users", users_path %>
-        </div>
-        <div class="nav-child">
-          <%= link_to "All spells", spells_path %>
-        </div>
-        <div class="nav-child">
-          <%= link_to "All items", items_path %>
-        </div>
-      </nav>
-
-      <% if session[:user_id] %>
+    <% if session[:user_id] %>
       <div class="user-nav">
         <%= render 'users/userinfo' %>
       </div>
-      <% end %>
-    </header>
+    <% end %>
 
     <main>
-      <div class="notifications">
-        <% if flash[:notice] %>
-          <div class="flash-notice">
-            <%= flash[:notice] %>
-          </div>
-        <% end %>
-        <% if flash[:error] %>
-          <div class="flash-error">
-            <%= flash[:error] %>
-          </div>
-        <% end %>
-      </div>
+      <% if flash[:notice] && flash[:eror] %>
+        <div class="notifications">
+          <% if flash[:notice] %>
+            <div class="flash-notice">
+              <%= flash[:notice] %>
+            </div>
+          <% end %>
+          <% if flash[:error] %>
+            <div class="flash-error">
+              <%= flash[:error] %>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
 
 
       <%= render "breadcrumbs" unless @disable_breadcrumbs %>
