@@ -40,6 +40,7 @@
     </li>
     <% end %>
   </ul>
+  <h3>You have <%= @logged_in_user.tokens %> tokens.</h3>
 <% end %>
 <p><%= button_to "Purchase items", items_path, method: :get %></p>
 

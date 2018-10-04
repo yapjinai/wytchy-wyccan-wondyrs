@@ -64,15 +64,18 @@ main {
 .notifications {
   height: 60px;
   padding: 25px;
+
 }
 
   .flash-notice {
-    background: green;
+    background: limegreen;
     padding: 5px;
+    font-size: xx-large;
   }
   .flash-error {
     background: red;
     padding: 5px;
+    font-size: xx-large;
   }
 
 .breadcrumbs {

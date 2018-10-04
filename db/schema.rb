@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_03_214741) do
+ActiveRecord::Schema.define(version: 2018_10_04_153732) do
 
   create_table "castings", force: :cascade do |t|
     t.integer "user_id"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2018_10_03_214741) do
     t.string "bloodtype"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "tokens", default: 0
   end
 
 end

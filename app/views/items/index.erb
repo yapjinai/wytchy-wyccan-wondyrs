@@ -3,11 +3,7 @@
 
 <% if @logged_in_user %>
   <h1>Purchase a new item</h1>
-
-  <% if flash[:notice] %>
-    <p><%= flash[:notice] %></p>
-  <% end %>
-
+  
   <%= form_tag possessions_path do %>
     <%= text_field_tag :symbol %>
     <%= submit_tag "Purchase"%>

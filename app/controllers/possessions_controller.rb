@@ -23,8 +23,14 @@ class PossessionsController < ApplicationController
       symbol = params[:symbol].strip
       item = Item.find_by(symbol: symbol)
       if item == nil
-        flash[:notice] = "No such glyph -- you earn a token for your efforts."
-        flash[:symbol] = "✴️"
+        if symbol.empty?
+          flash[:notice] = "Please enter a glyph to purchase an item."
+        else
+          @logged_in_user.tokens += 1
+          @logged_in_user.save
+          flash[:notice] = "No such glyph -- you earn a token for your efforts."
+          flash[:symbol] = "✴️"
+        end
       else
         @possession = Possession.find_or_create_by(item: item, user: @logged_in_user)
         if @possession.quantity == nil
