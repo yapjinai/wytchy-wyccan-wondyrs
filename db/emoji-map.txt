@@ -36,4 +36,5 @@
 death; Causes a slow and painful death. Use with discretion. = 🏹x1, 💄x3, 🕯x7
 hex; Damn someone to three days' bad luck. = 🎭💍x1, 🌶x1, 🕯x2
 levitation; Cause something to rise. = 🕷x1
+burn candle; 30; A ritual candle burning to warm the soul and bring the self closer to nature. = 🕯x1
 *social lubricant; Alleviates awkwardness between two people. = 🍶x1

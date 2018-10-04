@@ -13,6 +13,7 @@ class CastingsController < ApplicationController
     @spell = Spell.find_by(id: spell_id)
     if !sufficient_items?
       flash[:error] = "Insufficient items for #{@spell.name}."
+      # maybe direct to home instead?
       redirect_to @spell
     elsif !sufficient_subjects?
       flash[:error] = "Subject(s) required!"
@@ -53,7 +54,6 @@ class CastingsController < ApplicationController
   end
 
   def sufficient_subjects?
-
     !@subject_1.empty? && !(@subject_2.empty? && @spell.binate)
   end
 
@@ -67,8 +67,8 @@ class CastingsController < ApplicationController
       end
       possession.save
     end
-    #create casting
-    Casting.create(user: @logged_in_user, spell: @spell)
+    now = Time.now
+    Casting.create(user: @logged_in_user, spell: @spell, finished_at: now.advance(seconds: spell.duration))
   end
 
 end
