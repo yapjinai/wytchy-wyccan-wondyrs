@@ -35,7 +35,7 @@ nav {
   nav .nav-child {
   }
 
-.user-nav {
+/* .user-nav {
   background: #333333;
   padding: 10px;
 
@@ -44,15 +44,15 @@ nav {
 
 }
 
-  .user-nav div {
-    font-family: sans-serif;
-    display: inline;
-    color: white;
-  }
+.user-nav div {
+  font-family: sans-serif;
+  display: inline;
+  color: white;
+}
 
-    .user-nav div form {
-      float: right;
-    }
+.user-nav div form {
+  float: right;
+} */
 
 
 main {
@@ -85,7 +85,7 @@ main {
   }
 
 .breadcrumbs {
-  background: url('bg-grass.jpg');
+  background: url('bg-scroll.jpg');
   background-size: cover;
   background-position: center;
   margin: 25px;
@@ -94,7 +94,7 @@ main {
 }
 
 .content {
-  background: url('bg-paper.jpg');
+  background: url('bg-scroll.jpg');
   background-size: contain;
   margin: 25px;
   padding: 25px;
@@ -106,19 +106,19 @@ h1,h2,h3,h4,h5,h6 {
   /* font-size: 200%; */
 }
 
-
 ul {
   list-style-type: none;
 }
 
 /* popup sidebar menu */
 #menu {
-  display: none;
+  /* display: none; */
 
   padding: 20px;
   position: fixed;
-  width: 20%;
-  background: url('bg-paper.jpg')
+  width: 10%;
+  background: url('bg-scroll.jpg');
+  border: #ccc 10px double;
 }
 
 #menu-button:hover #menu {
@@ -130,12 +130,6 @@ ul {
   text-align: center;
   padding-top: 10px;
 }
-
-
-
-
-
-
 
 /* flex */
 
@@ -152,4 +146,26 @@ ul {
   display: inline-flex;
 
   /* border: 2px solid blue; */
+}
+
+input[type=submit] {
+  -webkit-appearance: button;
+  font-family: serif;
+}
+
+hr {
+    border: none;
+    /* border-top: 3px double #333; */
+    color: #333;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+}
+
+hr:after {
+    /* background: #fff; */
+    content: '🔮';
+    padding: 0 4px;
+    position: relative;
+    top: -13px;
 }
