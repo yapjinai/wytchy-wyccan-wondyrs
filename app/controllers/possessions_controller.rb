@@ -69,7 +69,7 @@ class PossessionsController < ApplicationController
     def new_discovery
       if !Discovery.find_by(user: @logged_in_user, item: @item)
         Discovery.create(user: @logged_in_user, item: @item)
-        flash[:discovery] = "You discovered #{@item.symbol} #{@item.name}! You will remember it's glyph forever."
+        flash[:discovery] = "You discovered #{@item.symbol} #{@item.name}! You will remember its glyph forever."
         true
       else
         false

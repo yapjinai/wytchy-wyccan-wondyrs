@@ -30,12 +30,12 @@
     <li>
       <div class="flex-horizontal">
         <div class="flex-child">
-          <% if @discoveries.include?(i) %>
-            <%= i.symbol %>
-          <% end %>
+          <%= link_to i.name, i %>
         </div>
         <div class="flex-child">
-          <%= link_to i.name, i %>
+          <% if @discoveries.include?(i) %>
+          <%= i.symbol %>
+          <% end %>
         </div>
         <div class="flex-child">
           <%= button_to pluralize(i.price, "tokens"), purchase_path, params: {item_id: i.id} %>
