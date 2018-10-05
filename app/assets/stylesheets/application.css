@@ -52,7 +52,7 @@ main {
   }
 
   .flash-notice {
-    background: limegreen;
+    background: #3B22B6;
     padding: 10px;
     font-size: xx-large;
   }
