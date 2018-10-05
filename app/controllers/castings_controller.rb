@@ -52,7 +52,7 @@ class CastingsController < ApplicationController
   end
 
   def cast_spell
-    now = Time.now
+    now = Time.zone.now
     #create casting
     casting = Casting.create(
       user: @logged_in_user,
