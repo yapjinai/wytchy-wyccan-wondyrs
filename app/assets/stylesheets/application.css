@@ -122,6 +122,7 @@ ul {
 .flex-child {
   display: inline-flex;
   color: white;
+  /* border: 2px solid white; */
 }
 
 input[type=submit] {
@@ -130,20 +131,20 @@ input[type=submit] {
 }
 
 hr {
-    border: none;
-    border-top: 3px double plum;
-    color: #333;
-    overflow: visible;
-    text-align: center;
-    height: 5px;
+  border: none;
+  border-top: 3px double plum;
+  color: #333;
+  overflow: visible;
+  text-align: center;
+  height: 5px;
 }
 
 hr:after {
-    content: '🔮';
-    padding: 0 4px;
-    position: relative;
-    top: -16px;
-    color: #fff
+  content: '🔮';
+  padding: 0 4px;
+  position: relative;
+  top: -16px;
+  color: #fff
 }
 
 
