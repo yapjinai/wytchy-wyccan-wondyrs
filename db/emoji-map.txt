@@ -32,9 +32,9 @@
 🔏📖: ancient untranslated tome: 100
 
 *broken arrow; 10; Mends the relationship between two subjects. = 🏹x1, 💄x3, 🕯x7
-*love; 10; Causes first subject to fall in love with second. = 👠x5, 💄x3, 🌶x1
-death; 10; Causes a slow and painful death. Use with discretion. = 🏹x1, 💄x3, 🕯x7
-hex; 10; Damn someone to three days' bad luck. = 🎭💍x1, 🌶x1, 🕯x2
-levitation; 10; Cause something to rise. = 🕷x1
-burn candle; 30; A ritual candle burning to warm the soul and bring the self closer to nature. = 🕯x1
-*social lubricant; 10; Alleviates awkwardness between two people. = 🍶x1
+*starkrossed arrow; 10; Causes first subject to fall in love with second. = 👠x5, 💄x3, 🌶x1
+creeping mortis; 10; Causes a slow and painful death. Use with discretion. = 🏹x1, 💄x3, 🕯x7
+pale hex; 10; Damn someone to three days' bad luck. = 🎭💍x1, 🌶x1, 🕯x2
+candlelight ritual; 30; A ritual candle burning to warm the soul and bring the self closer to nature. = 🕯x1
+*tavernhall prayer; 10; Two subjects will get drinks together in the future. = 🍶x1, 🍵x1, 🕷x1
+time's arrow; 3600; If success, reconnect with an old acquaintance... if failure, lose someone you love. = 🐈💀x3, 🕷🕯x3, 🔏📖x1
