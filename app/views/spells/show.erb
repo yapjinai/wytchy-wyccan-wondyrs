@@ -1,8 +1,8 @@
-<h1>Spell page for <%= @spell.name %></h1>
+<h1><%= @spell.name %></h1>
 
-<p><strong>
+<h2><strong>
   <%= @spell.description %>
-</strong></p>
+</strong></h2>
 
 <% if @spell.binate %>
 <p>
@@ -26,7 +26,7 @@
 <ul>
   <% @spell.recipes.each do |r| %>
   <li>
-    <%= link_to pluralize(r.quantity, r.item.name), r.item %>
+    <%= link_to "#{@discovered_items.include?(r.item) ? r.item.symbol : ""} #{pluralize(r.quantity, r.item.name)}", r.item %>
   </li>
   <% end %>
 </ul>
