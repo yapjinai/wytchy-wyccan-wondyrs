@@ -7,7 +7,13 @@ class Spell < ApplicationRecord
 
   def duration_props
     props = {}
-    if self.duration > 3600
+    if self.duration > 31536000
+      duration = self.duration / 31536000
+      label = 'years'
+    elsif self.duration > 86400
+      duration = self.duration / 86400
+      label = 'days'
+    elsif self.duration > 3600
       duration = self.duration / 3600
       label = 'hours'
     elsif self.duration > 240
@@ -19,7 +25,6 @@ class Spell < ApplicationRecord
     end
     props[:duration] = duration
     props[:label] = label
-    byebug
     props
   end
 end
