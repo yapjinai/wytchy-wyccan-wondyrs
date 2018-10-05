@@ -49,7 +49,7 @@
 
           <% if @discoveries.include?(i) %>
 
-            <%= button_to i.symbol, purchase_path, params: {item_id: i.id}, class: "linkbutton" %>
+            <%= button_to i.symbol, possessions_path, params: {symbol: i.symbol}, class: "linkbutton" %>
 
           <% else %>
 
