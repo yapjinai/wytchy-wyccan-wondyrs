@@ -43,16 +43,22 @@ main {
   /* background: url('bg-scroll2.jpg'); */
 }
 
-  .flash-spell {
-    background: url('bg-glitter.webp');
+  /* .flash-spell {
+    background: url('bg-glitter-gold.webp');
 
     padding: 10px;
     font-size: xx-large;
     color: white;
-  }
+  } */
 
   .flash-notice {
-    background: #3B22B6;
+    background: limegreen;
+    padding: 10px;
+    font-size: xx-large;
+  }
+
+  .flash-discovery {
+    background: url('bg-glitter-pink.webp');
     padding: 10px;
     font-size: xx-large;
   }
@@ -64,7 +70,7 @@ main {
   }
 
 .flashy-spell {
-  background: url('bg-glitter.webp');
+  background: url('bg-glitter-gold.webp');
   background-size: cover;
   position: fixed;
   top: 0;
