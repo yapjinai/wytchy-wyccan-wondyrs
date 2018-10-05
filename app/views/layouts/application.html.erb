@@ -20,15 +20,19 @@
 
     <main>
       <% if flash[:notice] || flash[:error] || flash[:spell] %>
-        <div class="notifications bordered-div">
+        <div class="notifications">
           <% if flash[:spell] %>
             <div class="flash-spell">
               <%= flash[:spell] %>
             </div>
           <% end %>
-          <% if flash[:notice] %>
+          <% if flash[:notice] || flash[:discovery] %>
             <div class="flash-notice">
-              <%= flash[:notice] %>
+              <% if flash[:discovery] %>
+                <%= flash[:discovery] %>
+              <% else %>
+                <%= flash[:notice] %>
+              <% end %>
             </div>
           <% end %>
           <% if flash[:error] %>
