@@ -27,10 +27,14 @@
           <%= flash[:spell] %>
         </div>
         <% end %>
-        <% if flash[:notice] %>
-        <div class="flash-notice">
-          <%= flash[:notice] %>
-        </div>
+        <% if flash[:notice] || flash[:discovery] %>
+          <div class="flash-notice">
+            <% if flash[:discovery] %>
+              <%= flash[:discovery] %>
+            <% else %>
+              <%= flash[:notice] %>
+            <% end %>
+          </div>
         <% end %>
         <% if flash[:error] %>
         <div class="flash-error">
