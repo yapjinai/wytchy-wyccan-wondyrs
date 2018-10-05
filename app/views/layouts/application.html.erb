@@ -18,15 +18,22 @@
       </div>
     <% end %>
 
+    <% if flash[:spell] %>
+    <div class="flashy-spell">
+      <%= flash[:spell] %><br>
+      <%= link_to "🔮", home_path %>
+    </div>
+    <% end %>
+
     <main>
 
       <% if flash[:notice] || flash[:error] || flash[:spell] %>
       <div class="notifications">
-        <% if flash[:spell] %>
-        <div class="flash-spell">
-          <%= flash[:spell] %>
-        </div>
-        <% end %>
+        <!-- <% if flash[:spell] %> -->
+        <!-- <div class="flash-spell"> -->
+          <!-- <%= flash[:spell] %> -->
+        <!-- </div> -->
+        <!-- <% end %> -->
         <% if flash[:notice] || flash[:discovery] %>
           <div class="flash-notice">
             <% if flash[:discovery] %>

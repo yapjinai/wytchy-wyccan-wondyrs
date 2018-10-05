@@ -29,15 +29,15 @@
   <% @items.each do |i| %>
     <li>
       <div class="flex-horizontal">
-        <div class="flex-child">
+        <div class="flex-child even">
           <%= link_to i.name, i %>
         </div>
-        <div class="flex-child">
-          <% if @discoveries.include?(i) %>
+        <% if @discoveries.include?(i) %>
+        <div class="flex-child even center">
           <%= i.symbol %>
-          <% end %>
         </div>
-        <div class="flex-child">
+        <% end %>
+        <div class="flex-child even right">
           <%= button_to pluralize(i.price, "tokens"), purchase_path, params: {item_id: i.id} %>
         </div>
       </div>
