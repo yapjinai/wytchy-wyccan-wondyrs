@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   post "/sessions", to: "sessions#create", as: "sessions"
   delete "/sessions", to: "sessions#destroy", as: "logout"
 
-  post '/purchase', to: 'possessions#purchase'
+  post '/purchase', to: 'possessions#purchase', as: "purchase"
   patch '/discard_one', to: 'possessions#discard_one'
   patch '/discard_all', to: 'possessions#discard_all'
 

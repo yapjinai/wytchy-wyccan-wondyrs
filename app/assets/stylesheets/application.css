@@ -197,3 +197,12 @@ hr:after {
 .right {
   text-align: right;
 }
+
+.linkbutton {
+  background: none;
+  border: none;
+  color: #0066ff;
+  text-decoration: none;
+  cursor: crosshair;
+  text-size: xx-large;
+}

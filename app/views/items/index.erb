@@ -43,13 +43,19 @@
         <div class="flex-child even">
           <%= link_to i.name, i %>
         </div>
-        <% if @discoveries.include?(i) %>
-        <div class="flex-child even center">
-          <%= i.symbol %>
-        </div>
-        <% end %>
+
         <div class="flex-child even right">
-          <%= button_to pluralize(i.price, "tokens"), purchase_path, params: {item_id: i.id} %>
+
+
+          <% if @discoveries.include?(i) %>
+
+            <%= button_to i.symbol, purchase_path, params: {item_id: i.id}, class: "linkbutton" %>
+
+          <% else %>
+
+            <%= button_to pluralize(i.price, "tokens"), purchase_path, params: {item_id: i.id} %>
+
+          <% end %>
         </div>
       </div>
     </li>
