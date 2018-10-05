@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2018_10_04_225138) do
     t.string "symbol"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "price", default: 5
+    t.integer "price"
   end
 
   create_table "possessions", force: :cascade do |t|
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 2018_10_04_225138) do
     t.string "bloodtype"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "tokens", default: 0
+    t.integer "tokens", default: 20
   end
 
 end

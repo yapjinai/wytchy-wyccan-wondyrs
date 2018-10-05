@@ -25,6 +25,7 @@ class ApplicationController < ActionController::Base
         # this user id isn't in the database, delete this session
         #redirect_to '/logout'
         puts "LOGGED IN USER NOT IN DB"
+        session.delete(:user_id)
       end
     end
   end
