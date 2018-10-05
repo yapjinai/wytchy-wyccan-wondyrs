@@ -14,7 +14,7 @@ class CastingsController < ApplicationController
       redirect_to @spell
     else
       cast_spell
-      flash[:spell] = "#{@spell.name} cast for #{@subject_1} #{"and #{@subject_2}" if !@subject_2.empty?}."
+      flash[:spell] = "#{@spell.name} cast upon #{@subject_1}#{" and #{@subject_2}" unless @subject_2.empty?}."
       redirect_to @spell
     end
   end

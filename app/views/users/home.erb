@@ -39,11 +39,8 @@
     <% @current_spells.reverse.each do |c| %>
     <li>
       <%= link_to c.spell.name, c.spell %>
-      upon <%= c.subject_1 %>
-      <% if !c.subject_2.empty? %>
-        and <%= c.subject_2 %>
-      <% end %>
-      on <%= c.created_at.strftime("%B %d, %Y") %>
+      upon <%= c.subject_1 %><%= " and #{c.subject_2}" unless c.subject_2.empty? %>.
+      It will be complete at <%= c.finished_at.strftime("%R on %D") %>.
     </li>
     <% end %>
   </ul>
