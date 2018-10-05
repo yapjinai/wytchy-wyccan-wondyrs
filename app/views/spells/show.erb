@@ -20,24 +20,29 @@
   <% end %>
 </ul>
 
-<h3>Cast this spell</h3>
-
 <% if @logged_in_user %>
-  <%= form_for(@casting, url: {controller: 'castings', action: 'create'}) do |f| %>
-    <%= f.hidden_field :spell_id, value: @spell.id %>
+  <% if @logged_in_user.can_cast?(@spell) %>
 
-    <div class="flex-horizontal">
-      <div class="subject-title">Primary subject:</div>
-      <div><%= f.text_field :subject_1 %></div>
-    </div>
+    <h3>Cast this spell</h3>
 
-    <div class="flex-horizontal">
-      <% if @spell.binate %>
-        <div class="subject-title">Secondary subject:</div>
-        <div><%= f.text_field :subject_2 %><br></div>
-      <% end %>
-    </div>
+    <%= form_for(@casting, url: {controller: 'castings', action: 'create'}) do |f| %>
+      <%= f.hidden_field :spell_id, value: @spell.id %>
 
-    <%= f.submit "Cast", data: { confirm: "Are you sure? This action cannot be undone." } %>
+      <div class="flex-horizontal">
+        <div class="subject-title">Primary subject:</div>
+        <div><%= f.text_field :subject_1 %></div>
+      </div>
+
+      <div class="flex-horizontal">
+        <% if @spell.binate %>
+          <div class="subject-title">Secondary subject:</div>
+          <div><%= f.text_field :subject_2 %><br></div>
+        <% end %>
+      </div>
+
+      <%= f.submit "Cast", data: { confirm: "Are you sure? This action cannot be undone." } %>
+    <% end %>
+  <% else %>
+    <%= @logged_in_user.items_required(@spell) %>
   <% end %>
 <% end %>

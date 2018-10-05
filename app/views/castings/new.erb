@@ -1,5 +1,0 @@
-<h1>Cast a spell</h1>
-<%= form_for(@casting, url: {action: 'create'}) do |f| %>
-  <%= f.select :spell_id, @spells_options %>
-  <%= f.submit "Cast spell" %>
-<% end %>
