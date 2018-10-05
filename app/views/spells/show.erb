@@ -1,13 +1,24 @@
 <h1>Spell page for <%= @spell.name %></h1>
 
-<p>
+<p><strong>
   <%= @spell.description %>
-</p>
+</strong></p>
 
 <% if @spell.binate %>
 <p>
   This spell acts upon two subjects.
 </p>
+<% end %>
+
+<% spell_props = @spell.duration_props %>
+<% if spell_props[:duration] == 0 %>
+  <p>
+    It casts instantly.
+  </p>
+<% else %>
+  <p>
+    It casts in <%= spell_props[:duration].to_s %> <%= spell_props[:label] %>.
+  </p>
 <% end %>
 
 <h3><%= @spell.name %> requires the following items:</h3>
