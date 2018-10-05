@@ -45,6 +45,7 @@ main {
 
   .flash-spell {
     background: url('bg-glitter.webp');
+
     padding: 10px;
     font-size: xx-large;
     color: white;
@@ -61,6 +62,20 @@ main {
     padding: 10px;
     font-size: xx-large;
   }
+
+.flashy-spell {
+  background: url('bg-glitter.webp');
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90vw;
+  height: 40vh;
+
+  text-align: center;
+  padding: 30vh 5vw;
+  font-size: 5em;
+}
 
 /* breadcrumbs */
 
