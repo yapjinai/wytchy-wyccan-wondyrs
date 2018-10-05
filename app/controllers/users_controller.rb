@@ -35,16 +35,25 @@ class UsersController < ApplicationController
   end
 
   def destroy
-
+    @
   end
 
 # OTHER
 
-  def home
-    if session[:user_id] == nil
-      redirect_to root_path
-    end
+def home
+  if session[:user_id] == nil
+    redirect_to root_path
   end
+
+  now = Time.now
+  @current_spells = @logged_in_user.castings.select do |c|
+    c.finished_at > now
+  end.sort_by(&:created_at).reverse
+
+  @old_spells = @logged_in_user.castings.select do |c|
+    c.finished_at < now
+  end.sort_by(&:created_at).reverse
+end
 
   private
 
