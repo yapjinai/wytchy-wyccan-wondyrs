@@ -1,8 +1,14 @@
-<h1>All items</h1>
-
-
 <% if @logged_in_user %>
-  <h1>Summon a new item</h1>
+  <h1>Summoning Circle</h1>
+
+  <p>
+    Welcome to the trade, traveler fair,
+    From whence you were bade, we do not care.
+  </p>
+  <p>
+    Sacred ingredients have glyphs you must draw,
+    Choose glyphs wisely, or get nothing at all.
+  </p>
 
   <div class="flex-horizontal">
     <%= form_tag possessions_path do %>
@@ -14,7 +20,8 @@
       </div>
     <% end %>
   </div>
-
+<% else %>
+  <h1>All items</h1>
 <% end %>
 
 <div>
