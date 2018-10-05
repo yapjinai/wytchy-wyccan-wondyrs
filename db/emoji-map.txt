@@ -17,7 +17,6 @@
 🏹: bow & arrow: 7
 🦊💀: fox skull: 7
 🐈💀: cat skull: 7
-🕷💀: spider skull: 7
 🦊☠️: fox corpse: 10
 🐈☠️: cat corpse: 10
 🕷☠️: spider corpse: 10
