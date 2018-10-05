@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_04_165253) do
+ActiveRecord::Schema.define(version: 2018_10_04_225138) do
 
   create_table "castings", force: :cascade do |t|
     t.integer "user_id"
@@ -22,12 +22,21 @@ ActiveRecord::Schema.define(version: 2018_10_04_165253) do
     t.datetime "finished_at"
   end
 
+  create_table "discoveries", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_discoveries_on_item_id"
+    t.index ["user_id"], name: "index_discoveries_on_user_id"
+  end
+
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.string "symbol"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "price", default: 5
+    t.integer "price"
   end
 
   create_table "possessions", force: :cascade do |t|
@@ -63,7 +72,7 @@ ActiveRecord::Schema.define(version: 2018_10_04_165253) do
     t.string "bloodtype"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "tokens", default: 0
+    t.integer "tokens", default: 20
   end
 
 end

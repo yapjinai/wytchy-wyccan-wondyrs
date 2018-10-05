@@ -38,17 +38,6 @@ class PossessionsController < ApplicationController
       redirect_to items_path
     end
 
-  # READ
-
-  # UPDATE
-    def edit
-
-    end
-
-    def update
-
-    end
-
   # DELETE
     def discard_one
       possession = Possession.find_by(id: params[:possession][:id])
@@ -69,10 +58,21 @@ class PossessionsController < ApplicationController
 
     def add_to_possession
       @possession = Possession.find_or_create_by(item: @item, user: @logged_in_user)
+      new_discovery
       if @possession.quantity == nil
         @possession.update(quantity: 1)
       else
         @possession.update(quantity: @possession.quantity + 1)
+      end
+    end
+
+    def new_discovery
+      if !Discovery.find_by(user: @logged_in_user, item: @item)
+        Discovery.create(user: @logged_in_user, item: @item)
+        flash[:discovery] = "You discovered #{@item.symbol} #{@item.name}! You will remember its glyph forever."
+        true
+      else
+        false
       end
     end
 end

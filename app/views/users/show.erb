@@ -5,7 +5,7 @@
 <% else %>
   <h3><%= @user.username %> has cast the following spells:</h3>
   <ul>
-    <% @user.castings.each do |c| %>
+    <% @user.castings.reverse.each do |c| %>
     <li>
       <%= link_to c.spell.name, c.spell %>
       upon ***

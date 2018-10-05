@@ -1,0 +1,25 @@
+<h1>My discoveries</h1>
+
+<% if @discoveries.empty? %>
+  <h3>You have no discoveries!</h3>
+
+  <p>Try your hand at summoning some Items.</p>
+
+  <p>If your conjuring fails too many times, you can always sacrifice tokens.</p>
+
+  <p>When you've built up enough discoveries, your wizened mind will notice a pattern...</p>
+<% else %>
+  <h3>Discoveries</h3>
+
+  <p>In your travels, fair mage, you have found secret glyphs of objects from beyond... </p>
+
+  <p>They will reside in this lexicon forever as a testament to your magical prowess.</p>
+
+  <ul>
+    <% @discoveries.each do |d| %>
+      <li>
+        <%= link_to "#{d.item.symbol} #{d.item.name}", d.item %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>

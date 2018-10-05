@@ -4,12 +4,17 @@
 
 <% @spells.each do |s| %>
   <li>
-    <%= link_to s.name, s %>
+    <div class="flex-horizontal">
+      <div class="flex-child">
+        <%= link_to s.name, s %>
+      </div>
+      <% if @logged_in_user && @logged_in_user.can_cast?(s) %>
+        <div class="flex-child">
+          You can cast this spell!
+        </div>
+      <% end %>
+    </div>
   </li>
 <% end %>
 
 </ul>
-
-<% if @logged_in_user %>
-  <!-- <%= button_to "Cast a spell", castspell_path, method: :get %> -->
-<% end %>

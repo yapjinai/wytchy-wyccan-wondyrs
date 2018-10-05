@@ -1,11 +1,5 @@
 class CastingsController < ApplicationController
 
-# CREATE
-  # def new
-  #   @spells_options = Spell.all.map { |s| [s.name, s.id] }
-  #   @casting = Casting.new
-  # end
-
   def create
     spell_id = params[:casting][:spell_id].to_i
     @subject_1 = params[:casting][:subject_1] || ""
@@ -20,7 +14,7 @@ class CastingsController < ApplicationController
       redirect_to @spell
     else
       cast_spell
-      flash[:spell] = "#{@spell.name} cast."
+      flash[:spell] = "#{@spell.name} cast for #{@subject_1} #{"and #{@subject_2}" if !@subject_2.empty?}."
       redirect_to @spell
     end
   end
