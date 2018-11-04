@@ -66,3 +66,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Custom
 
 gem 'zodiac'
+gem "loofah", ">= 2.2.3"
